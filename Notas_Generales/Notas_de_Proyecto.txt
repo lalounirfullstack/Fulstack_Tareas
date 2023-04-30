@@ -1,5 +1,5 @@
 **********************************
-    >>>>> Notas Generales <<<<<
+  >>>>> Notas de Proyecto <<<<<
 **********************************
 Proyecto: Tienda Online
 Nombre: agoodshop
