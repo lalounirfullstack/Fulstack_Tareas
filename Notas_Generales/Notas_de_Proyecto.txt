@@ -1,0 +1,47 @@
+**********************************
+  >>>>> Notas de Proyecto <<<<<
+**********************************
+Proyecto: Tienda Online
+Nombre: agoodshop
+Objectivo: Maquetar una tienda Ficticia
+
+**********************************
+Requerimientos de Maqueta: 
+**********************************
+> Maquetar usando como referencia la imagen.
+> No hace falta que la tipografia, tamanos de fuentes
+  colores, espaciados sean perfecto, con que
+  tenga un aspecto similar es suficiente.
+> ** El Contenido debe funcionar en movil. **
+> Contenido debe estar correctamente posicionado
+  usando Grid o FlexBox
+> Maqueta Reponsiva
+  Un solo archivo HTML y CSS que adapte a pantalla  
+  movil y escritorio. 
+  ** Tableta no se requiere ** 
+
+**********************************
+Requerimientos de Entrega: 
+**********************************
++ Carpeta de Proyecto compromido
++ Un Archivo HTML y archivos necesarios.
+
+**********************************
+Rubrica: 
+**********************************
++ Utilizacion correcta HTML : 
+  > Puntos: 3
+  > Peso: 30%
++ Utilizacion correcta CSS : 
+  > Puntos: 4
+  > Peso: 40%
++ Robustez de la Maquetacion (delegacion de responsabilidad y responsive) : 
+  > Puntos: 2
+  > Peso: 20%
++ Limpieza de Codigo : 
+  > Puntos: 1
+  > Peso: 10%
+  *****************************
+  Puntos: 10 - Total: 100%  
+
+

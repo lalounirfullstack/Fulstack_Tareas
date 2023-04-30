@@ -1,0 +1,38 @@
+/*Utilities
+Includes stylying that is repetitively used along the site.
+*/
+
+/*Google Font Import*/
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500&family=Forum&family=Montserrat:wght@100;200;300;400&display=swap');
+
+/*Variables*/
+:root {
+  /*Background Colors*/
+  --primary-bg-background: #9494b8;
+  --secondary-bg-background: #c2c2d6;
+  --third-bg-background: #ff751a;
+
+  /*Border Radius*/
+  --round-border-radius: 10px;
+  --circle-border-radius: 50%;
+}
+/*General Base Styles*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--primary-bg-background);
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+}
+
+ul a {
+  text-decoration: none;
+}
