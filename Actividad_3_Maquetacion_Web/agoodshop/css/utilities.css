@@ -10,11 +10,25 @@ Includes stylying that is repetitively used along the site.
   /*Background Colors*/
   --primary-bg-background: #9494b8;
   --secondary-bg-background: #c2c2d6;
-  --third-bg-background: #ff751a;
+  --third-bg-background: #000;
+  --fourth-bg-background: #fff;
+  --fifth-bg-background: #ff0000;
+  --sixth-bg-background: #b3e6ff;
 
   /*Border Radius*/
-  --round-border-radius: 10px;
+  --round-border-radius: 5px;
   --circle-border-radius: 50%;
+
+  /*Border Colors*/
+  --bo-border: #ff751a;
+  --btn-border: #fff;
+  --box-border: #c2c2d6;
+
+  /*Button Colors*/
+  --primary-btn-background: #3385ff;
+  --secondary-btn-background: #ff0000;
+  --hover-btn-background: #33cc33;
+  --txt-btn-color: #fff;
 }
 /*General Base Styles*/
 * {
@@ -25,7 +39,7 @@ Includes stylying that is repetitively used along the site.
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: var(--primary-bg-background);
+  background: var(--fourth-bg-background);
   line-height: 1.6;
 }
 
@@ -35,4 +49,34 @@ ul {
 
 ul a {
   text-decoration: none;
+}
+
+/*Buttons*/
+.primary-btn {
+  background: var(--primary-btn-background);
+  color: var(--txt-btn-color);
+  padding: 10px;
+  border-radius: var(--round-border-radius);
+  border: var(--btn-border) 1px;
+}
+
+.sale-btn {
+  background: var(--secondary-btn-background);
+  color: var(--txt-btn-color);
+  padding: 10px;
+  border-radius: var(--round-border-radius);
+  border: var(--btn-border) 1px;
+}
+
+.primary-btn:hover {
+  background: var(--hover-btn-background);
+  color: var(--txt-btn-color);
+  padding: 10px;
+  border-radius: var(--round-border-radius);
+  border: var(--bo-border) 2px;
+}
+
+/*Sale Info Section */
+.sale-info .icon-space {
+  padding: 20px;
 }

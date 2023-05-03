@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--secondary-bg-background);
-  color: #fff;
+  color: var(--fourth-bg-background);
   opacity: 0.8;
   height: 70px;
   width: 100%;
@@ -16,15 +16,16 @@
 }
 
 .navbar a {
-  color: black;
+  color: var(--third-bg-background);
   padding: 10px 20px;
   margin: 0 5px;
 }
 
 .navbar a:hover {
-  border: var(--third-bg-background) 2px solid;
-  background: #000;
-  color: #fff;
+  border: var(--bo-border) 2.5px solid;
+  background: var(--third-bg-background);
+  color: var(--fourth-bg-background);
+  border-radius: var(--round-border-radius);
 }
 
 .navbar ul {
@@ -39,4 +40,59 @@
 .navbar .logo:hover {
   opacity: 0.8;
   border: var(--third-bg-background) 2px solid;
+}
+
+/*Sales Section*/
+.sale {
+  margin: 100px 50px;
+  weight: 100%;
+}
+.sale-items {
+  display: flex;
+}
+
+.sale-pic {
+  max-width: 400px;
+  height: 400px;
+}
+
+.sale-pic img {
+  width: 300px;
+  height: 400px;
+}
+
+.sale-info {
+  margin: 10px 60px 30px;
+}
+
+.sale-info .iPhone-Cost {
+  display: flex;
+}
+
+.sale-info .price {
+  font-weight: bold;
+  font-size: 20px;
+  padding-right: 40px;
+}
+
+.sale-info .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sale-info h3 {
+  color: var(--fifth-bg-background);
+}
+
+.sale-info p {
+  text-align: left;
+}
+
+.sale-info .screen {
+  padding: 20px 0;
+}
+
+.sale-info .icon-space {
+  padding: 0px;
 }
