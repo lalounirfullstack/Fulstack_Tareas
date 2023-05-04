@@ -35,6 +35,7 @@
 /*Image Stylying*/
 .navbar .logo {
   width: 150px;
+  margin: 40px;
 }
 
 .navbar .logo:hover {
@@ -95,4 +96,39 @@
 
 .sale-info .icon-space {
   padding: 0px;
+}
+
+/*Accesories Section*/
+.accesories-header {
+  margin: 0px 0px 0px 50px;
+}
+
+.accessories {
+  display: flex;
+  margin: 20px 0 50px 50px;
+  weight: 100%;
+}
+
+.accesory-card {
+  margin: 0;
+  padding: 30px;
+}
+
+.accessory-details h3 {
+  margin: 20px 0;
+}
+
+/*Raffle Section*/
+.raffle-section {
+  background: var(--sixth-bg-background);
+  margin: 40px;
+}
+
+.raffle-section .raffle-info-form {
+  display: flex;
+}
+
+.rafle-info h1,
+p {
+  padding: 20px;
 }
