@@ -1,4 +1,9 @@
 /*Specific Non Repetitive Styles*/
+
+/* .main-page {
+  padding: 10px 30px 0 30px;
+} */
+
 /*Header Stylying*/
 /*Menu NavBar Stylying*/
 .navbar {
@@ -50,6 +55,8 @@
 }
 .sale-items {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .sale-pic {
@@ -62,36 +69,38 @@
   height: 400px;
 }
 
+.sale-info h3 {
+  color: var(--fifth-bg-background);
+}
+
 .sale-info {
   margin: 10px 60px 30px;
+  padding: 0;
+  max-width: 60%;
 }
 
 .sale-info .iPhone-Cost {
   display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
 }
 
 .sale-info .price {
   font-weight: bold;
   font-size: 20px;
+  padding-left: 0;
   padding-right: 40px;
 }
 
 .sale-info .icons {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 
-.sale-info h3 {
-  color: var(--fifth-bg-background);
-}
-
-.sale-info p {
-  text-align: left;
-}
-
 .sale-info .screen {
-  padding: 20px 0;
+  padding: 5px 0;
 }
 
 .sale-info .icon-space {
@@ -106,29 +115,109 @@
 .accessories {
   display: flex;
   margin: 20px 0 50px 50px;
-  weight: 100%;
-}
-
-.accesory-card {
-  margin: 0;
-  padding: 30px;
-}
-
-.accessory-details h3 {
-  margin: 20px 0;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 /*Raffle Section*/
 .raffle-section {
-  background: var(--sixth-bg-background);
-  margin: 40px;
+  background: var(--fourth-bg-background);
+  border-radius: var(--round-border-radius);
+  border: var(--box-border) 2px dotted;
+  margin: 20px 150px 50px 50px;
+  height: 400px;
 }
 
-.raffle-section .raffle-info-form {
+.raffle-info {
   display: flex;
+  align-items: start;
 }
 
-.rafle-info h1,
-p {
-  padding: 20px;
+.raffle-info-content {
+  margin: 30px;
+  width: 80%;
+  height: 340px;
+  background: #f0f0f5;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  border-radius: var(--user-input-border-radius);
+}
+
+.raffle-user-info {
+  margin: 30px;
+  height: 340px;
+  width: 25%;
+  background: #f0f0f5;
+}
+
+.raffle-info-content-header {
+  padding: 20px 0 0 50px;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.raffle-info-content-sub-header {
+  padding: 0 0 0 50px;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.raffle-info-content-details {
+  padding: 20px 0 0 50px;
+}
+
+.sorteo {
+  font-style: italic;
+  font-weight: bold;
+  color: var(--red-color);
+}
+
+/*Raffle User Input Section*/
+.raffle-user-info {
+  border-radius: var(--user-input-border-radius);
+  padding: 40px;
+  box-sizing: border-box;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rafle-user-logo {
+  width: 150px;
+  border-radius: var(--user-input-border-radius);
+  //margin: auto;
+}
+
+.rafle-user-input {
+  display: flex;
+  flex-direction: column;
+}
+
+label,
+input {
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+label {
+  margin-bottom: 2px;
+}
+
+label:nth-of-type(2) {
+  margin-top: 12px;
+}
+
+input {
+  background: #ecf0f3;
+  padding: 10px;
+  padding-left: 20px;
+  height: 50px;
+  font-size: 14px;
+  border-radius: var(--user-input-border-radius);
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  font-weight: bold;
 }
