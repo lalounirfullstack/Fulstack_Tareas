@@ -8,34 +8,33 @@ Includes stylying that is repetitively used along the site.
 /*Variables*/
 :root {
   /*Background Colors*/
-  --primary-bg-background: #9494b8;
-  --secondary-bg-background: #c2c2d6;
-  --third-bg-background: #000;
-  --fourth-bg-background: #fff;
-  --fifth-bg-background: #ff0000;
-  --sixth-bg-background: #cceeff;
-  --seventh-bg-background: #f0f0f5;
+  --dark-gray-bg-background: #c2c2d6;
+  --black-bg-background: #000;
+  --white-bg-background: #fff;
+  --red-bg-background: #ff0000;
+  --med-dark-gray-bg-background: #cbced1;
+  --light-gray-bg-background: #f0f0f5;
 
   /*Border Radius*/
   --round-border-radius: 5px;
-  --user-input-border-radius: 20px;
-  --circle-border-radius: 50%;
+  --circle-border-radius: 50px;
+  --square-border-radius: 20px;
 
   /*Border Colors*/
-  --bo-border: #ff751a;
+  --btn-hov-border: #ff751a;
   --btn-border: #fff;
   --box-border: #c2c2d6;
 
   /*Button Colors*/
-  --primary-btn-background: #3385ff;
-  --secondary-btn-background: #ff0000;
-  --hover-btn-background: #33cc33;
-  --txt-btn-color: #fff;
+  --blue-btn-background: #3385ff;
+  --red-btn-background: #ff0000;
+  --green-hover-btn-background: #33cc33;
 
   /*Cursor*/
   --pointer-cursor: pointer;
 
   /*Text Color*/
+  --txt-btn-color: #fff;
   --red-color: #ff0000;
 }
 /*General Base Styles*/
@@ -47,7 +46,7 @@ Includes stylying that is repetitively used along the site.
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: var(--fourth-bg-background);
+  background: var(--white-bg-background);
   line-height: 1.6;
 }
 
@@ -61,7 +60,7 @@ ul a {
 
 /*Buttons*/
 .primary-btn {
-  background: var(--primary-btn-background);
+  background: var(--blue-btn-background);
   color: var(--txt-btn-color);
   padding: 10px;
   border-radius: var(--round-border-radius);
@@ -70,13 +69,13 @@ ul a {
 
 .primary-btn:hover {
   cursor: var(--pointer-cursor);
-  background: var(--hover-btn-background);
-  border: var(--bo-border) 2px;
+  background: var(--green-hover-btn-background);
+  border: var(--btn-hov-border) 2px;
 }
 
 .sale-btn {
   margin: 0 0 10px 0;
-  background: var(--secondary-btn-background);
+  background: var(--red-btn-background);
   color: var(--txt-btn-color);
   padding: 10px;
   border-radius: var(--round-border-radius);
@@ -85,7 +84,7 @@ ul a {
 
 .new-btn {
   margin: 0 0 10px 0;
-  background: var(--primary-btn-background);
+  background: var(--blue-btn-background);
   color: var(--txt-btn-color);
   padding: 10px;
   border-radius: var(--round-border-radius);
@@ -95,18 +94,18 @@ ul a {
 .raffle-user-btn {
   color: var(--txt-btn-color);
   margin-top: 20px;
-  background: var(--primary-btn-background);
+  background: var(--blue-btn-background);
   height: 40px;
   border: var(--btn-border) 1px;
   border-radius: var(--round-border-radius);
   cursor: pointer;
-  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  box-shadow: 6px 6px 6px var(--med-dark-gray-bg-background), -6px -6px 6px #fff;
   transition: 0.5s;
 }
 
 .raffle-user-btn:hover {
   box-shadow: none;
-  background: var(--hover-btn-background);
+  background: var(--green-hover-btn-background);
 }
 
 /*Sale Info Section */
@@ -114,6 +113,7 @@ ul a {
   padding: 20px;
 }
 
+/*Accessory Cards*/
 .accessories .accessory-card {
   width: 380px;
   margin: 0px 30px 0 0;
@@ -129,14 +129,14 @@ ul a {
   justify-content: center;
   padding: 10px;
   height: 250px;
-  background: var(--seventh-bg-background);
+  background: var(--light-gray-bg-background);
   border: var(--box-border) 2px solid;
   border-radius: var(--round-border-radius);
 }
 
 .accessories .accesory-image:hover {
   cursor: var(--pointer-cursor);
-  background: var(--secondary-bg-background);
+  background: var(--dark-gray-bg-background);
   border: 2px dotted;
 }
 
