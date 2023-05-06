@@ -49,12 +49,16 @@
           <h3>Oferta</h3>
           <h2>Compra un iFhone 13 Pro</h2>
           
-          <p>iFhone 13 tu nuevo superpoder. Nuestro sistema de cámara dual más avanzado. El chip que hace morder el polvo a la competencia. Un subidón de autonoma que vaya si notarás.</p>
-<p>Ceramic shield más duro que cualquier vidrio de smartphone.</p>
+          <p class="screen">iFhone 13 tu nuevo superpoder. Nuestro sistema de cámara dual más avanzado. El chip que hace morder el polvo a la competencia. Un subidón de autonoma que vaya si notarás.</p>
+<p class="screen">Ceramic shield más duro que cualquier vidrio de smartphone.</p>
           <p class="screen">Pantalla Super Retina XDR de 6.1 pulgadas. Diseño robusto con border planos y resistente al agua.</p>
           <div class="iPhone-Cost">
+            <div>
             <p class="price">938,99,€</p>
+           </div>
+            <div>
             <button type="button" class="primary-btn">Comprar</button>
+          </div>
           </div>
           <div class="icons">
             <i class="fa-sharp fa-solid fa-truck-fast"></i>
@@ -82,8 +86,11 @@
           </div>
         </figure>
           <div class="accessory-details">
-              <h3>Cargador</h3>
-              <p>El adaptador de corriente USB-C de 20W es muy rápido y efeciente, asi que va de perlas para cargar tus dispositivos en cualquier lugar.</p>
+              <div class="accessory-card-header"><h3>Cargador</h3>
+              </div> 
+              <div> 
+              <p class="accesory-card-info">El adaptador de corriente USB-C de 20W es muy rápido y efeciente, asi que va de perlas para cargar tus dispositivos en cualquier lugar.</p>
+            </div>
           </div>
         </div>
           <!--Second Accesory Card-->
@@ -95,9 +102,15 @@
             </div>
           </figure>
             <div class="accessory-details">
+              <div class="accessory-card-header">
                 <h3>Base de Carga Inalámbrica</h3>
+            </div>
+            <div class="accessory-card-btn">
                 <button style="button" class="sale-btn"> Oferta</button>
-                <p>Sistema de soporte para que sigas usando to smartphoone cómodamente mientras lo cargas. Compatible con carga rápida de 20W.</p>
+              </div>
+              <div>
+                <p class="accesory-card-info">Sistema de soporte para que sigas usando to smartphoone cómodamente mientras lo cargas. Compatible con carga rápida de 20W.</p>
+              </div>
           </div>
         </div>
         <!--Cards  Section-->
@@ -110,8 +123,12 @@
               </div>
             </figure>
               <div class="accessory-details">
+                <div class="accessory-card-header">
                   <h3>Funda piel</h3>
-                  <p>Fabricadas en piel europea curtida y teñida con un proceso especial, son suaves al tacto y adquieren un tono natral con el tiempo. Los botones de aluminio combinan con el acabado de la piel</p>
+                </div>
+                <div>
+                  <p class="accesory-card-info">Fabricadas en piel europea curtida y teñida con un proceso especial, son suaves al tacto y adquieren un tono natral con el tiempo. Los botones de aluminio combinan con el acabado de la piel</p>
+                </div>
           </div>
           </div>
         <!--Cards Section-->
@@ -124,13 +141,53 @@
               </div>
             </figure>
               <div class="accessory-details">
+                <div class="accessory-card-header">
                   <h3>Cargador</h3>
+                </div>
+                <div class="accessory-card-btn">
                   <button style="button" class="new-btn"> Nuevo</button>
-                  <p>El adaptador de corriente USB-C de 20W es muy rápido y efeciente, asi que va de perlas para cargar tus dispositivos en cualquier lugar.</p>
+                </div>
+                <div > 
+                  <p class="accesory-card-info">El adaptador de corriente USB-C de 20W es muy rápido y efeciente, asi que va de perlas para cargar tus dispositivos en cualquier lugar.</p>
+                </div> 
           </div>
           </div>
       </div>
-    </section>    
-  </main>  
+    </section>
+     <!--Raffle Section-->
+    <div class="raffle-section">
+      <!--Raffle Details-->
+      <div class="raffle-info">
+        <!--Raffle Info-->
+        <div class="raffle-info-content">
+          <p class="raffle-info-content-header">
+            Participa en el sorteo de un 
+          </p>
+          <p class="raffle-info-content-sub-header">
+            iFhone 13
+          </p>
+          <p class="raffle-info-content-details">
+            Este verano. ! venimos cargados de premios ! Así que antes de irte de vacaciones, <span class="sorteo">¡ participa en nuestro sorteo !</span> y podrás llevarte un regalo increible como un nuevo iPhone 13.
+          </p>
+          <p class="raffle-info-content-details">
+            Rellena este formulario para ser uno de los afortundados.
+          </p>
+        </div>
+        <!--Raffle User Info-->
+        <div class="raffle-user-info">
+          <div>
+            <img class="rafle-user-logo" src="../img/logos/agoodshop_logo.JPG">
+          </div>
+          <div class="rafle-user-input">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Ari Gold">
+            <label for="email">Email</label>
+            <input type="email" placeholder="arigold@mga.com">
+            <button type="submit" class="raffle-user-btn">Enviar</button>
+          </div>
+        </div>
+    </div>
+  </main>
+</div>
   </body>
 </html>

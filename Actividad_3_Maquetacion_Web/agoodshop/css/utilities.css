@@ -13,10 +13,12 @@ Includes stylying that is repetitively used along the site.
   --third-bg-background: #000;
   --fourth-bg-background: #fff;
   --fifth-bg-background: #ff0000;
-  --sixth-bg-background: #e6f7ff;
+  --sixth-bg-background: #cceeff;
+  --seventh-bg-background: #f0f0f5;
 
   /*Border Radius*/
   --round-border-radius: 5px;
+  --user-input-border-radius: 20px;
   --circle-border-radius: 50%;
 
   /*Border Colors*/
@@ -29,6 +31,12 @@ Includes stylying that is repetitively used along the site.
   --secondary-btn-background: #ff0000;
   --hover-btn-background: #33cc33;
   --txt-btn-color: #fff;
+
+  /*Cursor*/
+  --pointer-cursor: pointer;
+
+  /*Text Color*/
+  --red-color: #ff0000;
 }
 /*General Base Styles*/
 * {
@@ -61,10 +69,8 @@ ul a {
 }
 
 .primary-btn:hover {
+  cursor: var(--pointer-cursor);
   background: var(--hover-btn-background);
-  color: var(--txt-btn-color);
-  padding: 10px;
-  border-radius: var(--round-border-radius);
   border: var(--bo-border) 2px;
 }
 
@@ -72,7 +78,7 @@ ul a {
   margin: 0 0 10px 0;
   background: var(--secondary-btn-background);
   color: var(--txt-btn-color);
-  padding: 10px;
+  padding: 15px;
   border-radius: var(--round-border-radius);
   border: var(--btn-border) 1px;
 }
@@ -81,9 +87,26 @@ ul a {
   margin: 0 0 10px 0;
   background: var(--primary-btn-background);
   color: var(--txt-btn-color);
-  padding: 10px;
+  padding: 15px;
   border-radius: var(--round-border-radius);
   border: var(--btn-border) 1px;
+}
+
+.raffle-user-btn {
+  color: var(--txt-btn-color);
+  margin-top: 20px;
+  background: var(--primary-btn-background);
+  height: 40px;
+  border: var(--btn-border) 1px;
+  border-radius: var(--round-border-radius);
+  cursor: pointer;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
+}
+
+.raffle-user-btn:hover {
+  box-shadow: none;
+  background: var(--hover-btn-background);
 }
 
 /*Sale Info Section */
@@ -92,10 +115,9 @@ ul a {
 }
 
 .accessories .accessory-card {
-  //position: relative;
-  width: 480px;
+  width: 380px;
   margin: 0px 30px 0 0;
-  padding: 50px;
+  padding: 20px;
   border: var(--box-border) 2px solid;
   border-radius: var(--round-border-radius);
 }
@@ -105,15 +127,36 @@ ul a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px;
+  padding: 10px;
   height: 250px;
-  background: #f0f0f5;
+  background: var(--seventh-bg-background);
   border: var(--box-border) 2px solid;
   border-radius: var(--round-border-radius);
+}
+
+.accessories .accesory-image:hover {
+  cursor: var(--pointer-cursor);
+  background: var(--secondary-bg-background);
+  border: 2px dotted;
 }
 
 .accessories .accesory-image img {
   mix-blend-mode: multiply;
   max-width: 100%;
   height: 200px;
+}
+
+.accessory-card-header {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.accessory-card-header:hover {
+  cursor: var(--pointer-cursor);
+  font-size: 20px;
+  color: #ff0000;
+}
+
+.accesory-card-info {
+  padding: 0;
 }
