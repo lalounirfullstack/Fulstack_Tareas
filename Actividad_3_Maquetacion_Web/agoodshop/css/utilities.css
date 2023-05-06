@@ -78,7 +78,7 @@ ul a {
   margin: 0 0 10px 0;
   background: var(--secondary-btn-background);
   color: var(--txt-btn-color);
-  padding: 15px;
+  padding: 10px;
   border-radius: var(--round-border-radius);
   border: var(--btn-border) 1px;
 }
@@ -87,7 +87,7 @@ ul a {
   margin: 0 0 10px 0;
   background: var(--primary-btn-background);
   color: var(--txt-btn-color);
-  padding: 15px;
+  padding: 10px;
   border-radius: var(--round-border-radius);
   border: var(--btn-border) 1px;
 }
@@ -154,7 +154,7 @@ ul a {
 .accessory-card-header:hover {
   cursor: var(--pointer-cursor);
   font-size: 20px;
-  color: #ff0000;
+  color: var(--red-color);
 }
 
 .accesory-card-info {
