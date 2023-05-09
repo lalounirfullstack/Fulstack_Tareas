@@ -12,7 +12,11 @@
   width: 100%;
   position: fixed;
   top: 0px;
-  padding: 0 30px;
+  padding: 0 40px;
+}
+
+.navbar ul {
+  display: flex;
 }
 
 .navbar a {
@@ -28,18 +32,14 @@
   border-radius: var(--round-border-radius);
 }
 
-.navbar ul {
-  display: flex;
-}
-
 /*Image Stylying*/
-.navbar .logo {
+.logo {
   width: 150px;
   margin: 40px;
   border-radius: var(--square-border-radius);
 }
 
-.navbar .logo:hover {
+.logo:hover {
   opacity: 0.8;
   border: var(--black-bg-background) 2px solid;
 }
@@ -47,12 +47,13 @@
 /*Sales Section*/
 .sale {
   margin: 100px 50px;
-  weight: 100%;
+  width: 100%;
 }
 .sale-items {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  margin: 0;
 }
 
 .sale-pic {
@@ -93,17 +94,27 @@
   display: flex;
   justify-content: start;
   align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  max-width: 800px;
+}
+
+.icons-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .sale-info .screen {
   padding: 5px 0;
 }
 
-.sale-info .icon-space {
-  padding: 0px;
-}
-
 /*Accesories Section*/
+.accessories-container {
+  margin: 0;
+  padding: 0;
+}
 .accesories-header {
   margin: 0px 0px 0px 50px;
 }
@@ -120,7 +131,7 @@
 .raffle-section {
   background: var(--white-bg-background);
   border-radius: var(--round-border-radius);
-  border: var(--box-border) 2px dotted;
+  //border: var(--box-border) 2px dotted;
   margin: 20px 150px 50px 50px;
   height: 400px;
 }
@@ -128,11 +139,12 @@
 .raffle-info {
   display: flex;
   align-items: start;
+  flex-wrap: wrap;
 }
 
 .raffle-info-content {
   margin: 30px;
-  width: 80%;
+  width: 70%;
   height: 340px;
   background: var(--light-gray-bg-background);
   box-shadow: 14px 14px 20px var(--med-dark-gray-bg-background),
@@ -143,7 +155,7 @@
 .raffle-user-info {
   margin: 30px;
   height: 340px;
-  width: 25%;
+  width: 20%;
   background: var(--light-gray-bg-background);
 }
 
@@ -231,6 +243,7 @@ input {
 .copyright {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   padding: 20px;
@@ -250,9 +263,167 @@ input {
 }
 
 /*Media - Mobile*/
-@media (max-width: 768px) {
+@media (max-width: 640px) {
+  .logo {
+    margin: 0 0 10px 100px;
+    padding: 0px 20px;
+  }
+
   .navbar {
     flex-direction: column;
     align-items: start;
+    gap: 10px;
+    width: 100%;
+    margin: 0 20px 20px 0;
+    padding: 20px;
+    height: 100px;
+  }
+
+  .navbar a {
+    padding: 8px 8px;
+    margin: 0;
+  }
+
+  /* Sale Section*/
+  .sale {
+    margin: 90px 20px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .sale-items {
+    margin: 0;
+    padding: 0;
+    border: 1px dotted gray;
+    border-radius: var(--square-border-radius);
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+  }
+
+  .sale-pic {
+    margin: 10px;
+    padding: 0;
+    height: 300px;
+  }
+
+  .sale-pic img {
+    margin: 10px;
+    width: 200px;
+    height: 300px;
+  }
+
+  .sale-info {
+    max-width: 100%;
+  }
+
+  .sale-info .icons {
+    //margin: 20px;
+    max-width: 950px;
+    flex-wrap: wrap;
+  }
+
+  .sale-info .icon-space {
+    font-size: 15px;
+  }
+
+  .icons-info {
+    display: flex;
+  }
+
+  .accessories {
+    margin-left: 15px;
+    margin-bottom: 0;
+    padding: 10px 5px 0 15px;
+  }
+
+  .accessory-card {
+    padding: 10px 5px 0 15px;
+  }
+
+  /* .accessory-card-header {
+    font-size: 8px;
+  }
+
+  .accessories .accesory-image img {
+    width: 120px;
+    height: 80px;
+  }
+
+  .accessories .accessory-card {
+    width: 200px;
+  } */
+
+  .raffle-section {
+    margin: 0;
+    width: 480px;
+  }
+
+  .raffle-info {
+    margin: 0;
+    flex-direction: column;
+  }
+
+  .raffle-info-content {
+    border: 2px dotted gray;
+  }
+
+  .raffle-info-content-header {
+    padding: 10px 5px 0 15px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .raffle-info-content-sub-header {
+    padding: 2px 5px 0 15px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .raffle-info-content-details {
+    padding: 10px 5px 0 15px;
+  }
+
+  /*Raffle User Input Section*/
+
+  .rafle-user-logo {
+    width: 120px;
+    border-radius: var(--square-border-radius);
+    //margin: auto;
+  }
+
+  .rafle-user-input {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  label,
+  input {
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  label {
+    margin-bottom: 2px;
+  }
+
+  label:nth-of-type(2) {
+    margin-top: 12px;
+  }
+
+  input {
+    background: #ecf0f3;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: var(--circle-border-radius);
+    box-shadow: inset 6px 6px 6px var(--med-dark-gray-bg-background),
+      inset -6px -6px 6px #fff;
+    font-weight: bold;
   }
 }
