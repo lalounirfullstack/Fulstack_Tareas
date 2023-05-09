@@ -338,21 +338,9 @@ input {
   }
 
   .accessory-card {
+    margin: 0;
     padding: 10px 5px 0 15px;
   }
-
-  /* .accessory-card-header {
-    font-size: 8px;
-  }
-
-  .accessories .accesory-image img {
-    width: 120px;
-    height: 80px;
-  }
-
-  .accessories .accessory-card {
-    width: 200px;
-  } */
 
   .raffle-section {
     margin: 0;
@@ -386,44 +374,25 @@ input {
 
   /*Raffle User Input Section*/
 
+  .raffle-user-info {
+    margin: 0 10px 12px 25px;
+    padding-top: 10px;
+    width: 350px;
+    border: 2px dotted gray;
+  }
+
   .rafle-user-logo {
     width: 120px;
     border-radius: var(--square-border-radius);
     //margin: auto;
   }
 
-  .rafle-user-input {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  .footer-container {
+    margin: 360px 0px 0;
   }
 
-  label,
-  input {
-    width: 100%;
-    padding: 0;
-    border: none;
-    outline: none;
-    box-sizing: border-box;
-  }
-
-  label {
-    margin-bottom: 2px;
-  }
-
-  label:nth-of-type(2) {
-    margin-top: 12px;
-  }
-
-  input {
-    background: #ecf0f3;
-    padding: 10px;
-    padding-left: 20px;
-    height: 50px;
-    font-size: 14px;
-    border-radius: var(--circle-border-radius);
-    box-shadow: inset 6px 6px 6px var(--med-dark-gray-bg-background),
-      inset -6px -6px 6px #fff;
-    font-weight: bold;
+  .copyright {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
