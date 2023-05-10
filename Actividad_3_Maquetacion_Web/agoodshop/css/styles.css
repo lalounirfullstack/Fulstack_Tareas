@@ -1,8 +1,36 @@
 /*Specific Non Repetitive Stylying*/
 
 /*Header Stylying*/
+.header-container {
+  display: flex;
+  background-color: var(--dark-gray-bg-background);
+  height: 70px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__navbar__li {
+  display: flex;
+  padding: 0 40px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.header__navbar__li a {
+  color: var(--black-bg-background);
+  padding: 10px 20px;
+  margin: 0 5px;
+}
+
+.header__navbar__li a:hover {
+  border: var(--btn-hov-border) 2.5px solid;
+  background: var(--black-bg-background);
+  color: var(--white-bg-background);
+  border-radius: var(--round-border-radius);
+}
+
 /*Menu NavBar Stylying*/
-.navbar {
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,24 +41,24 @@
   position: fixed;
   top: 0px;
   padding: 0 40px;
-}
+} */
 
-.navbar ul {
+/* .navbar ul {
   display: flex;
-}
+} */
 
-.navbar a {
+/* .navbar a {
   color: var(--black-bg-background);
   padding: 10px 20px;
   margin: 0 5px;
-}
+} */
 
-.navbar a:hover {
+/* .navbar a:hover {
   border: var(--btn-hov-border) 2.5px solid;
   background: var(--black-bg-background);
   color: var(--white-bg-background);
   border-radius: var(--round-border-radius);
-}
+} */
 
 /*Image Stylying*/
 .logo {
@@ -47,7 +75,7 @@
 /*Sales Section*/
 .sale {
   margin: 100px 50px;
-  width: 100%;
+  //width: 100%;
 }
 .sale-items {
   display: flex;
@@ -269,7 +297,26 @@ input {
     padding: 0px 20px;
   }
 
-  .navbar {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 20px 20px 0;
+    padding: 20px;
+    height: 100px;
+  }
+
+  .header__navbar__li {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .header__navbar__li a {
+    padding: 0;
+  }
+
+  /* .navbar {
     flex-direction: column;
     align-items: start;
     gap: 10px;
@@ -282,7 +329,7 @@ input {
   .navbar a {
     padding: 8px 8px;
     margin: 0;
-  }
+  } */
 
   /* Sale Section*/
   .sale {
