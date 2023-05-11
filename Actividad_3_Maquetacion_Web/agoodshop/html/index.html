@@ -18,11 +18,12 @@
     <title>GoodShop</title>
   </head>
   <body>
-    <div class="header-container">
-      <div class="card">
-        <img src="../img/logos/agoodshop_logo.JPG" class="logo">
+    <!--Header-->
+    <div class="header__container">
+      <div>
+        <img src="../img/logos/agoodshop_logo.JPG" class="header__container__img">
       </div>
-      <div class="card">
+      <div>
         <nav>
           <ul class="header__navbar__li">
             <li><a href="#tienda">Tienda</a></li>
@@ -33,32 +34,61 @@
         </nav>
       </div>
     </div>
-    <!--Header Section-->
-    <!-- <header>
-        <div class="navbar">
-            <img src="../img/logos/agoodshop_logo.JPG" class="logo">
-          <nav>
-            <ul class="header__navbar__li">
-              <li><a href="#tienda">Tienda</a></li>
-              <li><a href="#accesorios">Accesorios</a></li>
-              <li><a href="#soporte">Soporte</a></li>
-              <li><a href="#contactar">Contactar</a></li>
-            </ul>
-          </nav>
-      </div>
-    </header> -->
     <!--End Header-->
     <!--Main Section-->
   <main>
     <!--Sales Section-->
-    <div class="sale">
-      <div class="sale-items">
+    <div class="main__sale__container">
+      <figure>
+      <div class="main__sale-item_image">
+        <img src="../img/fotos/iPhone13_Pro.JPG" alt="iPhone 13 Pro" class="main__sale__image">
+      </div>
+    </figure>
+    <article>
+      <div class="main__sale-item-content">
+        <div class="main__sale-info">
+          <span class="main__sale-info-sale">Oferta</span>
+          <h2>Compra un iFhone 13 Pro</h2>
+          <p class="main__sale-info-screen">iFhone 13 tu nuevo superpoder. Nuestro sistema de cámara dual más avanzado. El chip que hace morder el polvo a la competencia. Un subidón de autonoma que vaya si notarás.</p>
+<p class="main__sale-info-screen">Ceramic shield más duro que cualquier vidrio de smartphone.</p>
+          <p class="main__sale-info-screen">Pantalla Super Retina XDR de 6.1 pulgadas. Diseño robusto con border planos y resistente al agua.</p>
+          <div class="main__sale__iPhone-Cost">
+              <div>
+              <p class="main__sale__info-price">938,99,€</p>
+             </div>
+            <div>
+              <button type="button" class="utility__primary-btn">Comprar</button>
+            </div>
+          </div>
+          <div class="main__sale-icons">
+            <div class="icons-info">  
+            <i class="fa-sharp fa-solid fa-truck-fast"></i>
+              <p class="icon-space">Envio rápido y gratuito</p>
+            </div>
+            <div class="icons-info" >
+              <i class="fa-sharp fa-solid fa-arrow-rotate-right"></i>
+              <p class="icon-space">Devoluciones fáciles y gratuitas</p>
+            </div>
+            <div class="icons-info">  
+            <strong><i class="fa-sharp fa-light fa-dollar-sign"></i></strong>
+            <p class="icon-space">Posibilidad de pago a plazos</p> 
+          </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    </div>
+
+
+
+    <!-- <div class="main__sale">
+      <div class="main__sale-items">
         <figure>
-          <div class="sale-pic">
+          <div class="main__sale__image">
             <img src="../img/fotos/iPhone13_Pro.JPG" alt="iPhone 13 Pro">
           </div>
         </figure>
-        <div class="sale-info">
+        <div class="main__sale-info">
           <h3>Oferta</h3>
           <h2>Compra un iFhone 13 Pro</h2>
           <p class="screen">iFhone 13 tu nuevo superpoder. Nuestro sistema de cámara dual más avanzado. El chip que hace morder el polvo a la competencia. Un subidón de autonoma que vaya si notarás.</p>
@@ -88,8 +118,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <!--End of Oferta Section-->
+    </div> -->
+    <!--End of Sale Section-->
     <!--Accesorios Section-->
     <section>
       <div>
@@ -174,7 +204,8 @@
           </div>
       </div>
     </section>
-     <!--Raffle Section-->
+    <aside>
+    <!--Raffle Section-->
     <div class="raffle-section">
       <!--Raffle Details-->
       <div class="raffle-info">
@@ -207,6 +238,7 @@
           </div>
         </div>
     </div>
+  </aside>  
   </main>
   <footer>
     <div class="footer-container">

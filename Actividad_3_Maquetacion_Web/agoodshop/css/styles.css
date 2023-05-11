@@ -1,12 +1,13 @@
 /*Specific Non Repetitive Stylying*/
 
 /*Header Stylying*/
-.header-container {
+.header__container {
   display: flex;
   background-color: var(--dark-gray-bg-background);
   height: 70px;
   justify-content: space-between;
   align-items: center;
+  margin: var(--default-margin);
 }
 
 .header__navbar__li {
@@ -29,113 +30,90 @@
   border-radius: var(--round-border-radius);
 }
 
-/*Menu NavBar Stylying*/
-/* .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--dark-gray-bg-background);
-  opacity: 0.8;
-  height: 70px;
-  width: 100%;
-  position: fixed;
-  top: 0px;
-  padding: 0 40px;
-} */
-
-/* .navbar ul {
-  display: flex;
-} */
-
-/* .navbar a {
-  color: var(--black-bg-background);
-  padding: 10px 20px;
-  margin: 0 5px;
-} */
-
-/* .navbar a:hover {
-  border: var(--btn-hov-border) 2.5px solid;
-  background: var(--black-bg-background);
-  color: var(--white-bg-background);
-  border-radius: var(--round-border-radius);
-} */
-
 /*Image Stylying*/
-.logo {
+.header__container__img {
   width: 150px;
   margin: 40px;
   border-radius: var(--square-border-radius);
 }
 
-.logo:hover {
+.header__container__img:hover {
   opacity: 0.8;
+  width: 160px;
   border: var(--black-bg-background) 2px solid;
 }
 
 /*Sales Section*/
-.sale {
-  margin: 100px 50px;
-  //width: 100%;
-}
-.sale-items {
+.main__sale__container {
+  /*background: green;*/
+  margin: var(--default-margin);
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0;
+  flex: wrap;
+  gap: 20px;
 }
 
-.sale-pic {
-  max-width: 400px;
-  height: 400px;
+.main__sale-item__image {
+  padding: 10px;
+  /*background-color: yellow;*/
 }
 
-.sale-pic img {
-  width: 300px;
-  height: 400px;
+.main__sale__image {
+  width: 250px;
+  height: 350px;
+  mix-blend-mode: multiply;
 }
 
-.sale-info h3 {
-  color: var(--red-bg-background);
+.main__sale-item-content {
+  padding: 10px;
+  /*background-color: greenyellow;*/
+  border-radius: var(--square-border-radius);
+  border: 1px dotted gray;
 }
 
-.sale-info {
+.main__sale-info {
   margin: 10px 60px 30px;
   padding: 0;
-  max-width: 60%;
 }
 
-.sale-info .iPhone-Cost {
+.main__sale-info-sale {
+  color: var(--red-bg-background);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.main__sale__iPhone-Cost {
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 5px;
+  gap: 15px;
+  padding: 20px 0px 20px 0;
 }
 
-.sale-info .price {
+.main__sale__info-screen {
+  margin: 10px;
+  padding: 10px;
+}
+
+.main__sale__info-price {
   font-weight: bold;
   font-size: 20px;
   padding-left: 0;
-  padding-right: 40px;
 }
 
-.sale-info .icons {
+.main__sale-icons {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
   padding-top: 30px;
-  max-width: 800px;
+  /*max-width: 800px;*/
 }
 
 .icons-info {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.sale-info .screen {
-  padding: 5px 0;
 }
 
 /*Accesories Section*/
@@ -290,16 +268,20 @@ input {
   gap: 10px;
 }
 
-/*Media - Mobile*/
+/*+++++++++++++++++++++++++++++/
+>>> Media - Mobile stylying <<<
+++++++++++++++++++++++++++++++*/
 @media (max-width: 640px) {
-  .logo {
-    margin: 0 0 10px 100px;
+  /*Header Section*/
+  .header__container__img {
+    margin: 0 50px 10px 80px;
     padding: 0px 20px;
   }
 
-  .header-container {
+  .header__container {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
     margin: 0 20px 20px 0;
     padding: 20px;
@@ -316,55 +298,33 @@ input {
     padding: 0;
   }
 
-  /* .navbar {
-    flex-direction: column;
-    align-items: start;
-    gap: 10px;
-    width: 100%;
-    margin: 0 20px 20px 0;
-    padding: 20px;
-    height: 100px;
-  }
-
-  .navbar a {
-    padding: 8px 8px;
-    margin: 0;
-  } */
-
   /* Sale Section*/
-  .sale {
-    margin: 90px 20px;
-    margin-bottom: 10px;
-    width: 100%;
-  }
-
-  .sale-items {
-    margin: 0;
-    padding: 0;
-    border: 1px dotted gray;
-    border-radius: var(--square-border-radius);
+  .main__sale__container {
     flex-direction: column;
     align-items: center;
-    width: 350px;
-  }
-
-  .sale-pic {
-    margin: 10px;
+    margin: 0;
     padding: 0;
-    height: 300px;
+    height: 1100px;
+    border: none;
   }
 
-  .sale-pic img {
-    margin: 10px;
-    width: 200px;
-    height: 300px;
+  .main__sale__image {
+    margin: 0px;
+    padding: 0px;
+    width: 150px;
+    height: 250px;
   }
 
-  .sale-info {
-    max-width: 100%;
+  main__sale-item-content {
+    padding: 20px;
+    border: none;
   }
 
-  .sale-info .icons {
+  .main__sale-info {
+    border: none;
+  }
+
+  .main__sale-icons {
     //margin: 20px;
     max-width: 950px;
     flex-wrap: wrap;
