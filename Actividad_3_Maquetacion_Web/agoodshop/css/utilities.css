@@ -50,9 +50,9 @@ body {
   line-height: 1.6;
 }
 
-img {
+/* img {
   width: 100%;
-}
+} */
 
 ul {
   list-style: none;
@@ -112,13 +112,16 @@ ul a {
   background: var(--green-hover-btn-background);
 }
 
-/*Sale Info Section */
+/*Sale Info Section*/
 .sale-info .icon-space {
   padding: 0px;
 }
 
 /*Accessory Cards*/
-.accessories .accessory-card {
+
+/* Retired*/
+/*Accessory Cards*/
+/* .main__accessory-card {
   width: 380px;
   margin: 0px 30px 0 0;
   padding: 20px;
@@ -127,7 +130,7 @@ ul a {
 }
 
 /*Card Images*/
-.accessories .accesory-image {
+/* .accesory-image {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,21 +139,21 @@ ul a {
   background: var(--light-gray-bg-background);
   border: var(--box-border) 2px solid;
   border-radius: var(--round-border-radius);
-}
+} */
 
-.accessories .accesory-image img {
+/* .accesory-image img {
   mix-blend-mode: multiply;
   max-width: 70%;
   height: 200px;
-}
+} */
 
-.accessories .accesory-image:hover {
+/* .accessories .accesory-image:hover {
   cursor: var(--pointer-cursor);
   background: var(--dark-gray-bg-background);
   border: 2px dotted;
-}
+} */
 
-.accessory-card-header {
+/* .accessory-card-header {
   margin: 20px 0;
   font-size: 16px;
 }
@@ -163,7 +166,7 @@ ul a {
 
 .accesory-card-info {
   padding: 0;
-}
+} */
 /*Utilities
 Includes stylying that is repetitively used along the site.
 */
