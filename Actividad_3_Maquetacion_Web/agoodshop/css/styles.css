@@ -116,22 +116,57 @@
   gap: 10px;
 }
 
+.main__accesories-container {
+  height: 400px;
+  //background-color: green;
+  margin: var(--default-margin);
+}
+
+.main__accesories-header {
+  padding: 10px;
+}
+
+.main__accessories-section {
+  padding-left: 10px;
+  //background-color: yellow;
+  //height: 300px;
+  display: flex;
+  align-items: evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.main__accesory-card {
+  //background-color: salmon;
+  height: 280px;
+  border: 1px solid black;
+}
+
+.main__accesory-details {
+  background-color: purple;
+  width: 400px;
+  height: 270px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
 /*Accesories Section*/
-.accessories-container {
+/* .main__accessories-container {
   margin: 0;
   padding: 0;
 }
-.accesories-header {
+.main__accesories-header {
   margin: 0px 0px 0px 50px;
 }
 
-.accessories {
+.main__accessories {
   display: flex;
   margin: 20px 0 50px 50px;
   justify-content: start;
   flex-wrap: wrap;
   gap: 30px;
-}
+} */
 
 /*Raffle Section*/
 .raffle-section {
@@ -304,7 +339,7 @@ input {
     align-items: center;
     margin: 0;
     padding: 0;
-    height: 1100px;
+    height: 1030px;
     border: none;
   }
 
@@ -326,20 +361,36 @@ input {
 
   .main__sale-icons {
     //margin: 20px;
-    max-width: 950px;
+    //max-width: 950px;
     flex-wrap: wrap;
   }
 
-  .sale-info .icon-space {
+  .main__sale-icon-space {
     font-size: 15px;
+    padding-left: 10px;
   }
 
-  .icons-info {
+  .main__sale-icons-info {
     display: flex;
+    align-items: center;
+  }
+
+  /*Accesories Cards*/
+  .main__accesories-header {
+    margin: 0 20px 10px 40px;
+    font-size: 200;
+  }
+
+  .main__accessory-card {
+    width: 180px;
+    margin: 0px 30px 0 0;
+    padding: 20px;
+    border: var(--box-border) 2px solid;
+    border-radius: var(--round-border-radius);
   }
 
   .accessories {
-    margin-left: 15px;
+    margin-left: 10px;
     margin-bottom: 0;
     padding: 10px 5px 0 15px;
   }
