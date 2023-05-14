@@ -1,11 +1,11 @@
-/*Utilities
-Includes stylying that is repetitively used along the site.
+/*Utilities Stylying
+>>> Includes variables and repetitive stylying used along the site. <<<
 */
 
 /*Google Font Import*/
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500&family=Forum&family=Montserrat:wght@100;200;300;400&display=swap');
 
-/*Variables*/
+/*Variables Sections*/
 :root {
   /*Background Colors*/
   --dark-gray-bg-background: #c2c2d6;
@@ -30,174 +30,9 @@ Includes stylying that is repetitively used along the site.
   --red-btn-background: #ff0000;
   --green-hover-btn-background: #33cc33;
 
-  /*Cursor*/
-  --pointer-cursor: pointer;
-
-  /*Text Color*/
-  --txt-btn-color: #fff;
-  --red-color: #ff0000;
-}
-/*General Base Styles*/
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: var(--white-bg-background);
-  line-height: 1.6;
-}
-
-/* img {
-  width: 100%;
-} */
-
-ul {
-  list-style: none;
-}
-
-ul a {
-  text-decoration: none;
-}
-
-/*Buttons*/
-.primary-btn {
-  background: var(--blue-btn-background);
-  color: var(--txt-btn-color);
-  padding: 10px;
-  border-radius: var(--round-border-radius);
-  border: var(--btn-border) 1px;
-}
-
-.primary-btn:hover {
-  cursor: var(--pointer-cursor);
-  background: var(--green-hover-btn-background);
-  border: var(--btn-hov-border) 2px;
-}
-
-.sale-btn {
-  margin: 0 0 10px 0;
-  background: var(--red-btn-background);
-  color: var(--txt-btn-color);
-  padding: 10px;
-  border-radius: var(--round-border-radius);
-  border: var(--btn-border) 1px;
-}
-
-.new-btn {
-  margin: 0 0 10px 0;
-  background: var(--blue-btn-background);
-  color: var(--txt-btn-color);
-  padding: 10px;
-  border-radius: var(--round-border-radius);
-  border: var(--btn-border) 1px;
-}
-
-.raffle-user-btn {
-  color: var(--txt-btn-color);
-  margin-top: 20px;
-  background: var(--blue-btn-background);
-  height: 40px;
-  border: var(--btn-border) 1px;
-  border-radius: var(--round-border-radius);
-  cursor: pointer;
-  box-shadow: 6px 6px 6px var(--med-dark-gray-bg-background), -6px -6px 6px #fff;
-  transition: 0.5s;
-}
-
-.raffle-user-btn:hover {
-  box-shadow: none;
-  background: var(--green-hover-btn-background);
-}
-
-/*Sale Info Section*/
-.sale-info .icon-space {
-  padding: 0px;
-}
-
-/*Accessory Cards*/
-
-/* Retired*/
-/*Accessory Cards*/
-/* .main__accessory-card {
-  width: 380px;
-  margin: 0px 30px 0 0;
-  padding: 20px;
-  border: var(--box-border) 2px solid;
-  border-radius: var(--round-border-radius);
-}
-
-/*Card Images*/
-/* .accesory-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  height: 250px;
-  background: var(--light-gray-bg-background);
-  border: var(--box-border) 2px solid;
-  border-radius: var(--round-border-radius);
-} */
-
-/* .accesory-image img {
-  mix-blend-mode: multiply;
-  max-width: 70%;
-  height: 200px;
-} */
-
-/* .accessories .accesory-image:hover {
-  cursor: var(--pointer-cursor);
-  background: var(--dark-gray-bg-background);
-  border: 2px dotted;
-} */
-
-/* .accessory-card-header {
-  margin: 20px 0;
-  font-size: 16px;
-}
-
-.accessory-card-header:hover {
-  cursor: var(--pointer-cursor);
-  font-size: 20px;
-  color: var(--red-color);
-}
-
-.accesory-card-info {
-  padding: 0;
-} */
-/*Utilities
-Includes stylying that is repetitively used along the site.
-*/
-
-/*Google Font Import*/
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500&family=Forum&family=Montserrat:wght@100;200;300;400&display=swap');
-
-/*Variables*/
-:root {
-  /*Background Colors*/
-  --dark-gray-bg-background: #c2c2d6;
-  --black-bg-background: #000;
-  --white-bg-background: #fff;
-  --red-bg-background: #ff0000;
-  --med-dark-gray-bg-background: #cbced1;
-  --light-gray-bg-background: #f0f0f5;
-
-  /*Border Radius*/
-  --round-border-radius: 5px;
-  --circle-border-radius: 50px;
-  --square-border-radius: 20px;
-
-  /*Border Colors*/
-  --btn-hov-border: #ff751a;
-  --btn-border: #fff;
-  --box-border: #c2c2d6;
-
-  /*Button Colors*/
-  --blue-btn-background: #3385ff;
-  --red-btn-background: #ff0000;
-  --green-hover-btn-background: #33cc33;
+  /*Ribbon Colors*/
+  --ribbon-background-color: #33cc33;
+  --ribbon-hover-background-color: #ff0000;
 
   /*Cursor*/
   --pointer-cursor: pointer;
@@ -207,7 +42,11 @@ Includes stylying that is repetitively used along the site.
   --red-color: #ff0000;
 
   /* Default Margin*/
-  --default-margin: 0 30px 20px 30px;
+  --default-margin: 0 30px 32px 30px;
+  --mobile-margin: 120px 30px 10px 30px;
+
+  /*Box Shadow*/
+  --shadow-box-shadow: 10px 10px 5px var(--med-dark-gray-bg-background);
 }
 /*General Base Styles*/
 * {
@@ -220,10 +59,6 @@ body {
   font-family: 'Montserrat', sans-serif;
   background: var(--white-bg-background);
   line-height: 1.6;
-}
-
-img {
-  width: 100%;
 }
 
 ul {
@@ -243,13 +78,13 @@ ul a {
   border: var(--btn-border) 1px;
 }
 
-.primary-btn:hover {
+.utility__primary-btn:hover {
   cursor: var(--pointer-cursor);
   background: var(--green-hover-btn-background);
   border: var(--btn-hov-border) 2px;
 }
 
-.sale-btn {
+.utility__sale-btn {
   margin: 0 0 10px 0;
   background: var(--red-btn-background);
   color: var(--txt-btn-color);
@@ -258,7 +93,7 @@ ul a {
   border: var(--btn-border) 1px;
 }
 
-.new-btn {
+.utility__new-btn {
   margin: 0 0 10px 0;
   background: var(--blue-btn-background);
   color: var(--txt-btn-color);
@@ -267,7 +102,7 @@ ul a {
   border: var(--btn-border) 1px;
 }
 
-.raffle-user-btn {
+.utility__raffle-user-btn {
   color: var(--txt-btn-color);
   margin-top: 20px;
   background: var(--blue-btn-background);
@@ -275,64 +110,12 @@ ul a {
   border: var(--btn-border) 1px;
   border-radius: var(--round-border-radius);
   cursor: pointer;
-  box-shadow: 6px 6px 6px var(--med-dark-gray-bg-background), -6px -6px 6px #fff;
+  box-shadow: 6px 6px 6px var(--med-dark-gray-bg-background),
+    -6px -6px 6px var(--white-bg-background);
   transition: 0.5s;
 }
 
-.raffle-user-btn:hover {
+.utility__raffle-user-btn:hover {
   box-shadow: none;
   background: var(--green-hover-btn-background);
-}
-
-/*Sale Info Section */
-.sale-info .icon-space {
-  padding: 0px;
-}
-
-/*Accessory Cards*/
-.accessories .accessory-card {
-  width: 380px;
-  margin: 0px 30px 0 0;
-  padding: 20px;
-  border: var(--box-border) 2px solid;
-  border-radius: var(--round-border-radius);
-}
-
-/*Card Images*/
-.accessories .accesory-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  height: 250px;
-  background: var(--light-gray-bg-background);
-  border: var(--box-border) 2px solid;
-  border-radius: var(--round-border-radius);
-}
-
-.accessories .accesory-image img {
-  mix-blend-mode: multiply;
-  max-width: 70%;
-  height: 200px;
-}
-
-.accessories .accesory-image:hover {
-  cursor: var(--pointer-cursor);
-  background: var(--dark-gray-bg-background);
-  border: 2px dotted;
-}
-
-.accessory-card-header {
-  margin: 20px 0;
-  font-size: 16px;
-}
-
-.accessory-card-header:hover {
-  cursor: var(--pointer-cursor);
-  font-size: 20px;
-  color: var(--red-color);
-}
-
-.accesory-card-info {
-  padding: 0;
 }

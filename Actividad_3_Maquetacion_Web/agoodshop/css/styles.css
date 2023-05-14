@@ -1,4 +1,6 @@
-/*Specific Non Repetitive Stylying*/
+/*
+ >>> Specific Site Elements Stylying <<<
+*/
 
 /*Header Stylying*/
 .header__container {
@@ -45,7 +47,6 @@
 
 /*Sales Section*/
 .main__sale__container {
-  /*background: green;*/
   margin: var(--default-margin);
   display: flex;
   flex: wrap;
@@ -54,20 +55,50 @@
 
 .main__sale-item__image {
   padding: 10px;
-  /*background-color: yellow;*/
 }
 
 .main__sale__image {
   width: 250px;
   height: 350px;
   mix-blend-mode: multiply;
+  position: relative;
+  z-index: -1;
+}
+
+.main__sale__img-wrapper-ribbon {
+  width: 85px;
+  height: 370px;
+  overflow: hidden;
+  position: absolute;
+  top: 104px;
+  left: 32px;
+}
+
+.main__sale__img-ribbon {
+  font: bold 15px sans-serif;
+  color: #333;
+  text-align: center;
+  transform: rotate(-45deg);
+  position: relative;
+  padding: 7px 0;
+  top: 15px;
+  left: -30px;
+  width: 120px;
+  background-color: var(--ribbon-background-color);
+  color: var(--txt-btn-color);
+  text-transform: uppercase;
+}
+
+.main__sale__img-ribbon:hover {
+  background-color: var(--ribbon-hover-background-color);
+  color: var(--txt-btn-color);
 }
 
 .main__sale-item-content {
   padding: 10px;
-  /*background-color: greenyellow;*/
   border-radius: var(--square-border-radius);
   border: 1px dotted gray;
+  margin: var(--default-margin);
 }
 
 .main__sale-info {
@@ -107,7 +138,6 @@
   gap: 10px;
   flex-wrap: wrap;
   padding-top: 30px;
-  /*max-width: 800px;*/
 }
 
 .icons-info {
@@ -116,10 +146,10 @@
   gap: 10px;
 }
 
+/*Accessories Stylying*/
 .main__accesories-container {
-  height: 400px;
-  //background-color: green;
   margin: var(--default-margin);
+  margin-bottom: 10px;
 }
 
 .main__accesories-header {
@@ -128,124 +158,138 @@
 
 .main__accessories-section {
   padding-left: 10px;
-  //background-color: yellow;
-  //height: 300px;
   display: flex;
-  align-items: evenly;
-  gap: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .main__accesory-card {
-  //background-color: salmon;
-  height: 280px;
-  border: 1px solid black;
+  border: 2px dotted grey;
+  border-radius: var(--round-border-radius);
+  border: var(--box-border) 2px solid;
+  background: var(--light-gray-bg-background);
+  max-width: 350px;
+  height: 500px;
+  box-shadow: var(--shadow-box-shadow);
 }
 
 .main__accesory-details {
-  background-color: purple;
-  width: 400px;
   height: 270px;
-  margin: 10px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
 }
 
-/*Accesories Section*/
-/* .main__accessories-container {
-  margin: 0;
-  padding: 0;
-}
-.main__accesories-header {
-  margin: 0px 0px 0px 50px;
+.main__accesory-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 250px;
+  background: var(--white-bg-background);
+  border: var(--box-border) 2px solid;
+  border-radius: var(--round-border-radius);
 }
 
-.main__accessories {
-  display: flex;
-  margin: 20px 0 50px 50px;
-  justify-content: start;
-  flex-wrap: wrap;
-  gap: 30px;
-} */
+.main__accesory-image img {
+  mix-blend-mode: multiply;
+  max-width: 70%;
+  height: 180px;
+  transition: transform 0.2s;
+}
+
+.main__accesory-image:hover {
+  cursor: var(--pointer-cursor);
+  border: var(--box-border) 1px dotted;
+  transform: scale(1.2);
+  box-shadow: var(--shadow-box-shadow);
+  border: var(--box-border) 2px dotted;
+}
+
+.main__accessory-card-header {
+  margin: 30px 0;
+  font-size: 16px;
+}
+
+.main__accesory-card-header:hover {
+  cursor: var(--pointer-cursor);
+  font-size: 15px;
+  color: var(--red-color);
+}
+
+.main__accesory-card-info {
+  margin-top: 10px;
+}
 
 /*Raffle Section*/
-.raffle-section {
-  background: var(--white-bg-background);
-  border-radius: var(--round-border-radius);
-  //border: var(--box-border) 2px dotted;
-  margin: 20px 150px 50px 50px;
-  height: 400px;
-}
-
-.raffle-info {
+.main__raffle-section {
+  margin: var(--default-margin);
   display: flex;
-  align-items: start;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  gap: 5px;
 }
 
-.raffle-info-content {
+.main__raffle-info {
+  background-color: gray;
+  max-width: 70%;
   margin: 30px;
-  width: 70%;
-  height: 340px;
+  display: flex;
+  flex-direction: column;
   background: var(--light-gray-bg-background);
-  box-shadow: 14px 14px 20px var(--med-dark-gray-bg-background),
-    -14px -14px 20px white;
+  box-shadow: 14px 14px 20px var(--med-dark-gray-bg-background);
   border-radius: var(--square-border-radius);
 }
 
-.raffle-user-info {
-  margin: 30px;
-  height: 340px;
-  width: 20%;
-  background: var(--light-gray-bg-background);
-}
-
-.raffle-info-content-header {
+.main__raffle-info-content-header {
   padding: 20px 0 0 50px;
   font-size: 30px;
   font-weight: 400;
 }
 
-.raffle-info-content-sub-header {
+.main__raffle-info-content-sub-header {
   padding: 0 0 0 50px;
   font-size: 30px;
   font-weight: 400;
 }
 
-.raffle-info-content-details {
+.main__raffle-info-content-details {
   padding: 20px 0 0 50px;
+  font-size: 20px;
+  font-weight: 300;
 }
 
-.sorteo {
+.main__span__raffle {
   font-style: italic;
   font-weight: bold;
   color: var(--red-color);
 }
 
 /*Raffle User Input Section*/
-.raffle-user-info {
+.main__raffle-user-info {
   border-radius: var(--square-border-radius);
+  margin: 30px 30px 30px 0;
   padding: 40px;
-  box-sizing: border-box;
-  box-shadow: 14px 14px 20px var(--med-dark-gray-bg-background),
-    -14px -14px 20px #fff;
+  background: var(--light-gray-bg-background);
+  box-shadow: 14px 14px 20px var(--med-dark-gray-bg-background);
+  border-radius: var(--square-border-radius);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.rafle-user-logo {
+.main__raffle-user-logo {
   width: 150px;
   border-radius: var(--square-border-radius);
-  //margin: auto;
 }
 
-.rafle-user-input {
+.main__raffle-user-input {
   display: flex;
   flex-direction: column;
 }
 
-label,
+.main__raffle-user-input label,
 input {
   width: 100%;
   padding: 0;
@@ -254,15 +298,15 @@ input {
   box-sizing: border-box;
 }
 
-label {
+.main__raffle-user-input label {
   margin-bottom: 2px;
 }
 
-label:nth-of-type(2) {
+.main__raffle-user-input label:nth-of-type(2) {
   margin-top: 12px;
 }
 
-input {
+.main__raffle-user-input input {
   background: #ecf0f3;
   padding: 10px;
   padding-left: 20px;
@@ -275,13 +319,13 @@ input {
 }
 
 /*Footer*/
-.footer-container {
+.footer__container {
   margin: 0;
   background-color: var(--dark-gray-bg-background);
   height: 120px;
 }
 
-.copyright {
+.footer__copyright {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -290,13 +334,13 @@ input {
   padding: 20px;
 }
 
-.copyright-logo {
+.footer__copyright-logo {
   width: 30px;
   height: 30px;
   mix-blend-mode: multiply;
 }
 
-.social-media ul {
+.footer__social-media ul {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -307,7 +351,7 @@ input {
 >>> Media - Mobile stylying <<<
 ++++++++++++++++++++++++++++++*/
 @media (max-width: 640px) {
-  /*Header Section*/
+  /*Header Mobile Section*/
   .header__container__img {
     margin: 0 50px 10px 80px;
     padding: 0px 20px;
@@ -333,7 +377,7 @@ input {
     padding: 0;
   }
 
-  /* Sale Section*/
+  /* Sale Mobile Section*/
   .main__sale__container {
     flex-direction: column;
     align-items: center;
@@ -350,6 +394,15 @@ input {
     height: 250px;
   }
 
+  .main__sale__img-wrapper-ribbon {
+    width: 75px;
+    height: 280px;
+    overflow: hidden;
+    position: absolute;
+    top: 121px;
+    left: 120px;
+  }
+
   main__sale-item-content {
     padding: 20px;
     border: none;
@@ -360,8 +413,6 @@ input {
   }
 
   .main__sale-icons {
-    //margin: 20px;
-    //max-width: 950px;
     flex-wrap: wrap;
   }
 
@@ -375,81 +426,75 @@ input {
     align-items: center;
   }
 
-  /*Accesories Cards*/
+  /*Accesories Mobile Section*/
+  .main__accesories-container {
+    margin: 120px 30px 10px 40px;
+  }
+
   .main__accesories-header {
-    margin: 0 20px 10px 40px;
-    font-size: 200;
+    padding: 10px;
+    font-size: 20px;
   }
 
-  .main__accessory-card {
-    width: 180px;
-    margin: 0px 30px 0 0;
-    padding: 20px;
-    border: var(--box-border) 2px solid;
-    border-radius: var(--round-border-radius);
-  }
-
-  .accessories {
-    margin-left: 10px;
-    margin-bottom: 0;
-    padding: 10px 5px 0 15px;
-  }
-
-  .accessory-card {
-    margin: 0;
-    padding: 10px 5px 0 15px;
-  }
-
-  .raffle-section {
-    margin: 0;
-    width: 480px;
-  }
-
-  .raffle-info {
-    margin: 0;
+  .main__accessories-section {
+    padding-left: 10px;
+    display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
   }
 
-  .raffle-info-content {
-    border: 2px dotted gray;
+  .main__accesory-card {
+    max-width: 280px;
+    height: 500px;
   }
 
-  .raffle-info-content-header {
-    padding: 10px 5px 0 15px;
-    font-size: 20px;
-    font-weight: 400;
+  .main__accesory-image img {
+    max-width: 60%;
+    height: 150px;
   }
 
-  .raffle-info-content-sub-header {
-    padding: 2px 5px 0 15px;
-    font-size: 20px;
-    font-weight: 400;
+  .main__accessory-card-header {
+    font-size: 14px;
   }
 
-  .raffle-info-content-details {
-    padding: 10px 5px 0 15px;
+  .main__accesory-card-info {
+    margin-top: 10px;
   }
 
-  /*Raffle User Input Section*/
-
-  .raffle-user-info {
-    margin: 0 10px 12px 25px;
-    padding-top: 10px;
-    width: 350px;
-    border: 2px dotted gray;
+  /*Raffle Mobile Section*/
+  .main__raffle-section {
+    margin: 0;
   }
 
-  .rafle-user-logo {
+  .main__raffle-user-info {
+    margin: 10px 30px 10px 0px;
+    //justify-content: start;
+  }
+
+  .main__rafle-user-logo {
     width: 120px;
     border-radius: var(--square-border-radius);
-    //margin: auto;
   }
 
-  .footer-container {
-    margin: 360px 0px 0;
+  .main__raffle-info-content-header,
+  .main__raffle-info-content-sub-header {
+    padding: 10px 10px 0 25px;
+    font-size: 30px;
+    font-weight: 350;
   }
 
-  .copyright {
+  .main__raffle-info-content-details {
+    padding: 10px 10px 0 25px;
+    font-size: 15px;
+  }
+
+  .footer__container {
+    margin: 0;
+  }
+
+  .footer__copyright {
     padding-top: 10px;
     padding-bottom: 10px;
   }
