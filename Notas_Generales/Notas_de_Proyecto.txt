@@ -44,4 +44,11 @@ Rubrica:
   *****************************
   Puntos: 10 - Total: 100%  
 
+  **************************************
+  Conceptos Implementados
+  **************************************
+  > FlexBox
+  > Transformation
+  > Animation
+  > Shadowing
 
