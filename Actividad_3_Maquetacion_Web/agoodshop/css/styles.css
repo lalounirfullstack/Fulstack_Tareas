@@ -269,11 +269,12 @@
 /*Raffle Section*/
 .main__raffle-section {
   margin: var(--default-margin);
+  margin-top: 25px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 5px;
-  background: var(--dark-gray-bg-background);
+  background: var(--blue-bg-background);
   box-shadow: 14px 14px 20px var(--dark-gray-bg-background);
   border-radius: var(--square-border-radius);
 }
@@ -284,8 +285,7 @@
   margin: 30px;
   display: flex;
   flex-direction: column;
-  background: var(--light-gray-bg-background);
-  box-shadow: 14px 14px 20px var(--med-dark-gray-bg-background);
+  background: var(--blue-bg-background);
   border-radius: var(--box-border-radius);
 }
 
@@ -315,10 +315,9 @@
 
 /*Raffle User Input Section*/
 .main__raffle-user-info {
-  border-radius: var(--box-border-radius);
   margin: 30px 30px 30px 0;
   padding: 40px;
-  background: var(--light-gray-bg-background);
+  background: var(--blue-bg-background);
   box-shadow: 14px 14px 20px var(--med-dark-gray-bg-background);
   border-radius: var(--box-border-radius);
   display: flex;
