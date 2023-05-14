@@ -359,14 +359,15 @@ input {
   height: 50px;
   font-size: 14px;
   border-radius: var(--circle-border-radius);
-  box-shadow: inset 6px 6px 6px var(--med-dark-gray-bg-background),
+  box-shadow: inset 6px 6px 6px var(--light-gray-bg-background),
     inset -6px -6px 6px #fff;
   font-weight: bold;
 }
 
 /*Footer*/
 .footer__container {
-  margin: 0;
+  margin: var(--default-margin);
+  margin-bottom: 0;
   background-color: var(--dark-gray-bg-background);
   height: 120px;
 }
