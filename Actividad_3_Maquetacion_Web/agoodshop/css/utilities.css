@@ -19,6 +19,7 @@
   --round-border-radius: 5px;
   --circle-border-radius: 50px;
   --square-border-radius: 20px;
+  --box-border-radius: 0px;
 
   /*Border Colors*/
   --btn-hov-border: #ff751a;
