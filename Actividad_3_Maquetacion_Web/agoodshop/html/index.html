@@ -18,7 +18,8 @@
     <title>GoodShop</title>
   </head>
   <body>
-    <!--Header-->
+    <!--Header Section-->
+    <header>
     <div class="header__container">
       <div>
         <img src="../img/logos/agoodshop_logo.JPG" class="header__container__img">
@@ -34,10 +35,12 @@
         </nav>
       </div>
     </div>
-    <!--End Header-->
+  </header>
+    <!--End Header Section-->
     <!--Main Section-->
   <main>
     <!--Sales Section-->
+    <section>
     <div class="main__sale__container">
       <figure>
       <div class="main__sale-item_image">
@@ -81,7 +84,9 @@
       </div>
     </article>
     </div>
-    <!--End of Sale Section-->
+    <!--End Sale Section-->
+  </section>
+  <section>
     <!--Accesorios Section-->
     <div class="main__accesories-container">
       <div>
@@ -153,35 +158,39 @@
     </div>
       </div>
     </div>
-    <!--End of Accesory Card--> 
+  </section>
+    <!--End Accesory Card--> 
     <!--Raffle Section-->
     <aside>
-      <!--Rafle Information Section-->
-      <div class="main__raffle-section">
-        <div class="main__raffle-info">
+    <div class="main__raffle-section">
+      <div class="main__raffle-info">
+        <div class="main__raffle-details">
           <p class="main__raffle-info-content-header">
             Participa en el sorteo de un
           </p>
           <p class="main__raffle-info-content-sub-header">iFhone 13</p>
           <p class="main__raffle-info-content-details">Este verano. ! venimos cargados de premios ! Así que antes de irte de vacaciones, <span class="main__span__raffle">¡ participa en nuestro sorteo !</span> y podrás llevarte un regalo increible como un nuevo iPhone 13.</p>
-          <p class="main__raffle-info-content-details">Rellena este formulario para ser uno de los afortunadados.</p>
+          <p class="main__raffle-info-content-details">Rellena este formulario para ser uno de los afortundados.</p>
         </div>
-        <!--Raffle User Input-->
-        <div class="main__raffle-user-info">
+        <div class="main__raffle-user-input">
           <div>
             <img class="main__raffle-user-logo" src="../img/logos/agoodshop_logo.JPG">
           </div>
-          <div class="main__raffle-user-input">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="Ari Gold">
+          <form action="" method="post">
+          <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Ari Gold" required>
             <label for="email">Email</label>
-            <input type="email" placeholder="arigold@mga.com">
+            <input type="email" placeholder="arigold@mga.com" required>
             <button type="submit" class="utility__raffle-user-btn">Enviar</button>
-          </div>
+          </form>
         </div>
       </div>
-    </aside>  
+    </div>
+    </aside> 
+    <!--End Raffle Section-->
   </main>
+  <!--End Main Section-->
+  <!--Footer Section-->
   <footer>
     <div class="footer__container">
       <div class="footer__copyright">
@@ -219,6 +228,7 @@
      </div>
     </div>
   </footer>
+  <!--End Footer-->
 </div>
   </body>
 </html>

@@ -14,7 +14,7 @@
   --red-bg-background: #ff0000;
   --med-dark-gray-bg-background: #cbced1;
   --light-gray-bg-background: #f0f0f5;
-  --blue-bg-background: #cceeff;
+  --light-blue-bg-background: #cce6ff;
 
   /*Border Radius*/
   --round-border-radius: 5px;
@@ -107,14 +107,14 @@ ul a {
 .utility__raffle-user-btn {
   color: var(--txt-btn-color);
   margin-top: 20px;
+  padding: 10px;
+  width: 90px;
   background: var(--blue-btn-background);
   height: 40px;
   border: var(--btn-border) 1px;
   border-radius: var(--round-border-radius);
   cursor: pointer;
-  box-shadow: 6px 6px 6px var(--med-dark-gray-bg-background),
-    -6px -6px 6px var(--white-bg-background);
-  transition: 0.5s;
+  box-shadow: 6px 6px 6px var(--med-dark-gray-bg-background);
 }
 
 .utility__raffle-user-btn:hover {

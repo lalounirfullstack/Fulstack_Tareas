@@ -1,8 +1,10 @@
 /*
  >>> Specific Site Elements Stylying <<<
+ >>> Created By: Lalo Aguirre
+ >>> Last Modified Date: 05-20-2023
 */
 
-/*Header Stylying*/
+/*Header Section Stylying*/
 .header__container {
   display: flex;
   background-color: var(--dark-gray-bg-background);
@@ -45,7 +47,7 @@
   border: var(--black-bg-background) 2px solid;
 }
 
-/*Sales Section*/
+/*Sales Section Styling*/
 .main__sale__container {
   margin: var(--default-margin);
   display: flex;
@@ -140,16 +142,16 @@
   padding-top: 30px;
 }
 
-.icons-info {
+.main__sale-icons-info {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-/*Accessories Stylying*/
+/*Accessories Section Stylying*/
 .main__accesories-container {
   margin: var(--default-margin);
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .main__accesories-header {
@@ -266,27 +268,32 @@
   margin-top: 10px;
 }
 
-/*Raffle Section*/
+/*Raffle Section Styling*/
 .main__raffle-section {
-  margin: var(--default-margin);
-  margin-top: 25px;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  gap: 5px;
-  background: var(--blue-bg-background);
-  box-shadow: 14px 14px 20px var(--dark-gray-bg-background);
+  margin: 20px 30px 20px 30px;
+  margin-top: 20px;
+  background-color: var(--light-blue-bg-background);
   border-radius: var(--square-border-radius);
+  display: flex;
 }
 
 .main__raffle-info {
-  background-color: gray;
-  max-width: 70%;
-  margin: 30px;
+  margin: var(--default-margin);
+  margin-bottom: 0px;
+  background-color: var(--light-blue-bg-background);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/*Raffle Details Styling*/
+.main__raffle-details {
+  margin: var(--default-margin);
+  margin-top: 20px;
+  background-color: var(--light-blue-bg-background);
   display: flex;
   flex-direction: column;
-  background: var(--blue-bg-background);
-  border-radius: var(--box-border-radius);
+  max-width: 70%;
 }
 
 .main__raffle-info-content-header {
@@ -313,17 +320,26 @@
   color: var(--red-color);
 }
 
-/*Raffle User Input Section*/
-.main__raffle-user-info {
+/*Raffle Input Stylying*/
+.main__raffle-user-input {
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.main__raffle-user-input {
+  border-radius: var(--box-border-radius);
   margin: 30px 30px 30px 0;
   padding: 40px;
-  background: var(--blue-bg-background);
-  box-shadow: 14px 14px 20px var(--med-dark-gray-bg-background);
+  background-color: var(--light-blue-bg-background);
+  border: 1px gray dotted;
   border-radius: var(--box-border-radius);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .main__raffle-user-logo {
   width: 150px;
   border-radius: var(--square-border-radius);
@@ -363,12 +379,11 @@ input {
   font-weight: bold;
 }
 
-/*Footer*/
+/*Footer Section Styling*/
 .footer__container {
   margin: var(--default-margin);
   margin-bottom: 0;
   background-color: var(--dark-gray-bg-background);
-  height: 120px;
 }
 
 .footer__copyright {
@@ -397,7 +412,7 @@ input {
 >>> Media - Mobile stylying <<<
 ++++++++++++++++++++++++++++++*/
 @media (max-width: 640px) {
-  /*Header Mobile Section*/
+  /*Header Mobile Section Styling*/
   .header__container__img {
     margin: 0 50px 10px 80px;
     padding: 0px 20px;
@@ -423,13 +438,12 @@ input {
     padding: 0;
   }
 
-  /* Sale Mobile Section*/
+  /* Sale Mobile Section Styling */
   .main__sale__container {
     flex-direction: column;
     align-items: center;
     margin: 0;
     padding: 0;
-    height: 1030px;
     border: none;
   }
 
@@ -449,13 +463,17 @@ input {
     left: 120px;
   }
 
-  main__sale-item-content {
-    padding: 20px;
+  .main__sale-item-content {
+    margin: 0;
     border: none;
   }
 
   .main__sale-info {
     border: none;
+  }
+
+  .main__sale-info-screen {
+    width: 300px;
   }
 
   .main__sale-icons {
@@ -472,9 +490,9 @@ input {
     align-items: center;
   }
 
-  /*Accesories Mobile Section*/
+  /*Accesories Mobile Section Styling */
   .main__accesories-container {
-    margin: 120px 30px 10px 40px;
+    margin: 20px 30px 10px 40px;
   }
 
   .main__accesories-header {
@@ -509,25 +527,12 @@ input {
     margin-top: 10px;
   }
 
-  /*Raffle Mobile Section*/
+  /*Raffle Mobile Section Styling*/
   .main__raffle-section {
     margin: 20px;
     flex-direction: column;
     align-items: center;
-    box-shadow: none;
-  }
-
-  .main__raffle-user-info {
-    margin: 10px 20px 20px 20px;
-  }
-
-  /* .main__raffle-user-input {
-    margin: 10px 30px 20px 30px;
-  } */
-
-  .main__rafle-user-logo {
-    width: 120px;
-    border-radius: var(--square-border-radius);
+    border-radius: var(--box-border-radius);
   }
 
   .main__raffle-info-content-header,
@@ -538,10 +543,23 @@ input {
   }
 
   .main__raffle-info-content-details {
+    width: 300px;
     padding: 10px 10px 0 25px;
     font-size: 15px;
+    margin-bottom: 0;
   }
 
+  .main__raffle-user-input {
+    margin: 0px 25px 20px 25px;
+    width: 300px;
+  }
+
+  .main__rafle-user-logo {
+    width: 120px;
+    border-radius: var(--square-border-radius);
+  }
+
+  /*Footer Section Styling*/
   .footer__container {
     margin: 0;
   }
