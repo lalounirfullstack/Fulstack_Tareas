@@ -1,50 +1,78 @@
-class ProductCartAPI {
-  constructor(apiUrl) {
-    this.apiUrl = apiUrl;
-  }
-
-  fetchData() {
-    return fetch(this.apiUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        const productData = data;
-        const shoppingCart = new ShoppingCart(productData);
-        console.log('Api: ', productData);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  }
-}
-
-class ShoppingCart {
+export class ShoppingCart {
   #products;
-  //#purchasedProducts;
+  #purchasedProducts;
 
-  constructor(data) {
-    this.#products = data;
-    //this.#purchasedProducts = [];
-    console.log('Shopping Cart Products:', this.#products);
+  constructor(products) {
+    this.#products = products;
+    this.#purchasedProducts = [];
+    //console.log('Shopping Cart Products:', this.#products);
   }
 
-  // addProducts(product) {
-  //   this.#products.push(product);
+  // addPurchasdedProducts(sku) {
+
   // }
 
-  displayProducts() {
-    this.#products;
+  getProducts() {
+    return this.#products;
   }
 
-  // getCartSize() {
-  //   return this.#products.length;
+  getCartSize() {
+    return this.#products.length;
+  }
+
+  getAllProductSKUs(data) {
+    let skus = [];
+    data.products.forEach((product) => skus.push(product.SKU));
+    return skus;
+  }
+
+  getAllProductSKUs(data) {
+    let skus = [];
+    data.products.forEach((product) => skus.push(product.SKU));
+    return skus;
+  }
+
+  getAllProducts(data) {
+    let products = [];
+    data.products.forEach((product) => products.push(product.title));
+    return products;
+  }
+
+  getProduct(sku) {
+    const product = this.#products.find((product) => product.SKU === sku);
+    if (product) {
+      return product;
+    } else {
+      return `No se encontro Producto`;
+    }
+  }
+
+  getProductSKU(title) {
+    const product = this.#products.find((product) => product.title === title);
+    if (product) {
+      return product;
+    } else {
+      return `No se encontro SKU`;
+    }
+  }
+
+  //TO DO
+  // getcartProductInfo(sku) {
+  //   const prod = {};
+  //   prod.name = this.#products.product.title;
+  //   prod.sku = this.#products.product.SKU;
+  //   prod.quantity = 5;
+  //   return product;
+  // }
+
+  //getCart()
+
+  // calculateProdPrice(quantity, price) {
+  //   return price * quantity;
   // }
 
   // getCartPurchasedProducts() {
   //   return this.#purchasedProducts.length;
-  // }
-
-  // getProduct(sku) {
-  //   return this.#products.find((product) => product.getSKU() === sku);
   // }
 
   // calculateShoppingCartTotal() {
@@ -52,16 +80,18 @@ class ShoppingCart {
   //     return acc + product.getPrice();
   //   }, 0);
   // }
-
-  // calculateProdPrice(quantity, price) {
-  //   return price * quantity;
-  // }
 }
 
-const productCartAPIResponse = new ProductCartAPI(
-  'https://jsonblob.com/api/jsonBlob/1108553464899977216'
-);
-productCartAPIResponse.fetchData();
+// const productCartAPIResponse = new ProductCartAPI(
+//   'https://jsonblob.com/api/jsonBlob/1108553464899977216'
+// );
 
-const shoppingCart = new ShoppingCart(data);
-shoppingCart.displayProducts();
+// productCartAPIResponse.fetchData().then((data) => {
+//   const shoppingCart = new ShoppingCart(data.products);
+//   //console.log(shoppingCart.displayProductsInfo());
+//   console.log(shoppingCart.getProduct('0K3QOSOV4V'));
+//   console.log(shoppingCart.getProductSKU('Funda de piel'));
+//   console.log(shoppingCart.getCartSize());
+//   console.log(shoppingCart.getAllProductSKUs(data));
+//   console.log(shoppingCart.getAllProducts(data));
+// });

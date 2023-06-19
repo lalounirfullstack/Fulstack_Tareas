@@ -60,7 +60,7 @@
   height: 95%;
   margin: 10px;
   margin-left: 10px;
-  background-color: Grey;
+  background-color: white;
 }
 
 .cart__container-product-table {
@@ -92,14 +92,6 @@
   justify-content: space-evenly;
   align-items: left;
   background-color: white;
-}
-
-.cart__container_products_image {
-  margin: 0px;
-}
-
-.cart__container-products_title p {
-  text-align: left;
 }
 
 .cart__container-cart-totals-div {

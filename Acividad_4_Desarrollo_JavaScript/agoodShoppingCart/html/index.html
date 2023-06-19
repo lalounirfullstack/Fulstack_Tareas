@@ -2,17 +2,120 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>a Good Company Shopping Cart</title>
-  </head>
+    <title>A good Company Shopping Cart</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/utilities.css" />
   <body>
-    <div class="shopping__cart-wrapper">
-      <div class="shopping__cart-products"></div>
-      <div class="shopping__cart-product-totals"></div>
+    <header>
+        <div class="header__container">
+          <div>
+            <img src="../img/logos/agoodshop_logo.JPG" class="header__container__img">
+          </div>
+          <div>
+            <nav>
+              <ul class="header__navbar__li">
+                <li><a href="#tienda">Tienda</a></li>
+                <li><a href="#accesorios">Accesorios</a></li>
+                <li><a href="#soporte">Soporte</a></li>
+                <li><a href="#contactar">Contactar</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+    <div class="cart__container">
+      <div class="cart__container-products">
+        <table class="cart__container-products__table">
+            <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Cantidad</th>
+                <th>Unidad</th>
+                <th>Total</th>
+            </tr>
+          </thead>
+            <tbody>
+            <!--<tr>
+                 <td><img src="../img/fotos/iPhone13_Pro.JPG" width="40px" height="40px" al="'iPhone13"></td>
+                <td>
+                    <p>iFhone13</p>
+                    <p>Ref:627T989</p>
+                </td>
+                <td>
+                    <img src="../img/logos/PlusCircle.GIF" width="40px" height="40px" al="Plus Symbol">
+                    <input
+              type="number"
+              value="0"
+              id="shopping-cart-quantity"
+              class="shopping-cart-quantity"
+            />
+            <img src="../img/logos/MinusCircle.GIF" width="40px" height="40px" al="Minus Symbol">
+                </td>
+                <td>938.99 E</td>
+                <td>$2816.97E</td> 
+            </tr>-->
+          </tbody>
+        </table>      
     </div>
-    <!--<script src="../js/product.js"></script>-->
-    <!--<script type="module" src="../js/productCartAPI.js"></script>-->
-    <script src="../js/shoppingCart.js"></script>
-    <script src="../js/index.js"></script>
+    <div class="cart__container-cart-totals-div">
+        <div class="cart__container-cart-total-header">
+          <p>Total</p>
+        </div>
+        <div class="cart__container-cart-total-item">
+          <p>iFhone13</p>
+          <p>$2816.97E</p>
+        </div>
+        <div class="cart__container-cart-total-sum">
+          <p>Total</p>
+          <p>$2816.97E</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+        <div class="footer__container">
+          <div class="footer__copyright">
+            <img src="../img/logos/copy-right.GIF" alt="copy-right logos" class="footer__copyright-logo">
+            <p class="footer__copyright-text">
+              2023 agoodshop
+            </p>        
+          </div>
+          <!--Footer Social Media Icons-->
+          <div class="footer__social-media">
+            <div class="social-media-icons">
+              <ul>
+                <li>
+                  <a href="https://facebook.com" target="_blank">
+                    <i class="fa-brands fa-facebook" style="color: #0c0d0d;"></i>
+                </a>
+                </li>
+                <li><a href="https://linkedin.com" target="_blank">
+                  <i class="fa-brands fa-linkedin" style="color: #050505;"></i>
+                </a></li>
+                <li>
+                  <a href="https://www.snapchat.com/" target="_blank">
+                    <i class="fa-brands fa-square-snapchat" style="color: #050505;"></i>
+                </a>
+                </li>
+                <li><a href="https://www.instagram.com/" target="_blank">
+                  <i class="fa-brands fa-square-instagram" style="color: #0a0a0a;"></i>
+                </a></li>
+                <li><a href="https://twitter.com/home" target="_blank">
+                  <i class="fa-brands fa-square-twitter" style="color: #050505;"></i>
+                </a></li>
+              </ul>  
+            </div>
+          </div>
+         </div>
+        </div>
+      </footer>
+      <!--End Footer-->
+      <!--<script src="../js/product.js"></script>-->
+      <script type="module" src="../js/shoppingCart.js">
+      </script>
+      <script type="module" src="../js/index.js"></script>
   </body>
-</html>
+
+
