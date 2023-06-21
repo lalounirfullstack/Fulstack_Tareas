@@ -16,6 +16,40 @@ export class ShoppingCart {
     return this.#products;
   }
 
+  getCart() {
+    let total = 0;
+
+    const products = this.#purchasedProducts.map((product) => {
+      const subtotal = this.calculateProdPrice(product.quantity, product.price);
+
+      total += subtotal;
+
+      return {
+        ...product,
+        subtotal,
+      };
+    });
+
+    return {
+      total,
+      products,
+    };
+  }
+
+  addPurchasedProducts(product, quantity) {
+    const found = this.#purchasedProducts.find(
+      ({ SKU }) => SKU === product.SKU
+    );
+
+    if (found) {
+      found.quantity = quantity;
+    } else {
+      const productCopy = JSON.parse(JSON.stringify(product));
+      productCopy.quantity = quantity;
+      this.#purchasedProducts.push(productCopy);
+    }
+  }
+
   getCartSize() {
     return this.#products.length;
   }
@@ -26,13 +60,7 @@ export class ShoppingCart {
     return skus;
   }
 
-  getAllProductSKUs(data) {
-    let skus = [];
-    data.products.forEach((product) => skus.push(product.SKU));
-    return skus;
-  }
-
-  getAllProducts(data) {
+  getAllProducts(ďata) {
     let products = [];
     data.products.forEach((product) => products.push(product.title));
     return products;
@@ -57,6 +85,11 @@ export class ShoppingCart {
   }
 
   //TO DO
+
+  calculateProdPrice(quantity, price) {
+    return price * quantity;
+  }
+
   // getcartProductInfo(sku) {
   //   const prod = {};
   //   prod.name = this.#products.product.title;
@@ -66,10 +99,6 @@ export class ShoppingCart {
   // }
 
   //getCart()
-
-  // calculateProdPrice(quantity, price) {
-  //   return price * quantity;
-  // }
 
   // getCartPurchasedProducts() {
   //   return this.#purchasedProducts.length;
