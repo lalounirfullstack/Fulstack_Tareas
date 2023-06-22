@@ -64,7 +64,6 @@ function buildCartProducts(products) {
   const cartContainerProducts = document.querySelector(
     '.cart__container-products'
   );
-  //console.log(cartContainerProducts);
 
   const table = document.querySelector(
     '.cart__container-products__table tbody'
@@ -86,17 +85,15 @@ function buildCartProducts(products) {
     const cellTotal = document.createElement('td');
 
     cellPrice.innerText = `${price}${shoppingCart.getCurrency()}`;
-    cellProduct.innerText = `${title} - ${SKU}`;
+    cellProduct.innerText = `${title} - Ref: ${SKU}`;
     cellQuantity.innerHTML = `<button class="cart__container__minus">
-                              <img src='../img/logos/MinusCircle.GIF' width="20px" height="20px">
+                              <img src='../img/logos/MinusCircle.GIF' width="20px" height="20px" class="cart__container__minus-img">
                               </button>
                               <input type="number" data-sku="${SKU}" id="qty" class="cart__container_product-quantity" min="0" value="0">
                               <button class="cart__container__plus">
-                              <img src='../img/logos/PlusCircle.GIF' width="20px" height="20px">
+                              <img src='../img/logos/PlusCircle.GIF' width="20px" height="20px" class="cart__container__minus-img">
                               </button>`;
-    //Append Elements
-    //row.appendChild(cellImage);
-    //const prodImage = document.querySelector('.cart__container-product-img');
+    cellTotal.innerText = `0 ${shoppingCart.getCurrency()}`;
 
     row.appendChild(cellProduct);
     row.appendChild(cellQuantity);
@@ -130,7 +127,7 @@ const updateTotals = () => {
 
   products.forEach((product) => {
     const row = document.createElement('div');
-    row.classList.add('flex');
+    row.classList.add('cart__container-prod-totals');
 
     row.innerHTML = `
       <div>${product.title}</div>
@@ -157,14 +154,12 @@ function bindEvents() {
 
     cell.addEventListener('click', (evt) => {
       if (evt.target.classList.contains('cart__container__minus')) {
-        console.log('Minus Event');
         const updatedMinusQuantity = parseInt(quantity.value) - 1;
         quantity.value = updatedMinusQuantity;
         updateQuantity(cell, +quantity.value, index);
       } else if (evt.target.classList.contains('cart__container__plus')) {
         const updatedPlusQuantity = parseInt(quantity.value) + 1;
         quantity.value = updatedPlusQuantity;
-        console.log('Plus Event');
         updateQuantity(cell, +quantity.value, index);
       } else {
         // ...
