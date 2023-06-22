@@ -64,13 +64,14 @@ function buildCartProducts(products) {
   const cartContainerProducts = document.querySelector(
     '.cart__container-products'
   );
-  console.log(cartContainerProducts);
+  //console.log(cartContainerProducts);
 
   const table = document.querySelector(
     '.cart__container-products__table tbody'
   );
 
   //Loops through Products and display Products from API
+  console.log(products);
   products.forEach(({ SKU, title, price }) => {
     //TRs for API Products
     const row = document.createElement('tr');
@@ -84,7 +85,7 @@ function buildCartProducts(products) {
     cellQuantity.classList.add('cart__container-qty');
     const cellTotal = document.createElement('td');
 
-    cellPrice.innerText = `${price}`;
+    cellPrice.innerText = `${price}${shoppingCart.getCurrency()}`;
     cellProduct.innerText = `${title} - ${SKU}`;
     cellQuantity.innerHTML = `<button class="cart__container__minus">
                               <img src='../img/logos/MinusCircle.GIF' width="20px" height="20px">
@@ -114,9 +115,9 @@ const updateQuantity = (cell, quantity, productIndex) => {
 
   shoppingCart.addPurchasedProducts(product, quantity);
 
-  totalCell.innerHTML = shoppingCart
-    .calculateProdPrice(quantity, product.price)
-    .toFixed(2);
+  totalCell.innerHTML =
+    shoppingCart.calculateProdPrice(quantity, product.price).toFixed(2) +
+    shoppingCart.getCurrency();
 
   updateTotals();
 };
@@ -133,14 +134,14 @@ const updateTotals = () => {
 
     row.innerHTML = `
       <div>${product.title}</div>
-      <div>${product.subtotal.toFixed(2)}</div>
+      <div>${product.subtotal.toFixed(2)}${shoppingCart.getCurrency()}</div>
     `;
 
     container.appendChild(row);
   });
 
   document.querySelector('.cart__container-cart-total-sum p + p').innerHTML =
-    total.toFixed(2);
+    total.toFixed(2) + shoppingCart.getCurrency();
 };
 
 function bindEvents() {
@@ -151,7 +152,7 @@ function bindEvents() {
     let quantity = cell.querySelector('.cart__container_product-quantity');
 
     quantity.addEventListener('input', () =>
-      updateQuantity(cell, quantity.value, index)
+      updateQuantity(cell, +quantity.value, index)
     );
 
     cell.addEventListener('click', (evt) => {
@@ -159,23 +160,18 @@ function bindEvents() {
         console.log('Minus Event');
         const updatedMinusQuantity = parseInt(quantity.value) - 1;
         quantity.value = updatedMinusQuantity;
-        updateQuantity(cell, quantity.value, index);
+        updateQuantity(cell, +quantity.value, index);
       } else if (evt.target.classList.contains('cart__container__plus')) {
         const updatedPlusQuantity = parseInt(quantity.value) + 1;
         quantity.value = updatedPlusQuantity;
         console.log('Plus Event');
-        updateQuantity(cell, quantity.value, index);
+        updateQuantity(cell, +quantity.value, index);
       } else {
         // ...
       }
     });
   });
 }
-
-//Update Product Total
-//docu
-
-// updateQuantity();
 
 let shoppingCart;
 
@@ -187,14 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
   productCartAPIResponse
     .fetchData()
     .then((data) => {
-      shoppingCart = new ShoppingCart(data.products);
-      console.log(shoppingCart.getProduct('0K3QOSOV4V'));
-      console.log(shoppingCart.getProductSKU('Funda de piel'));
-      console.log(shoppingCart.getCartSize());
-      console.log(shoppingCart.getAllProductSKUs(data));
-      //console.log(shoppingCart.getAllProducts(data));
-      console.log(shoppingCart.calculateProdPrice(10, 100));
-      // //console.log(shoppingCart.getcartProductInfo('0K3QOSOV4V'));
+      shoppingCart = new ShoppingCart(data.products, data.currency);
       buildCartProducts(data.products);
     })
     .catch((error) => {
