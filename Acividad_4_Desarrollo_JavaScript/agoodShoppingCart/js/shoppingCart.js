@@ -1,3 +1,10 @@
+/*
+ >>> Main Shopping Cart Class <<<
+ >>> Created By: Lalo Aguirre
+ >>> Last Modified Date: 06-25-2023
+*/
+
+// Export Class to be used in Index JS
 export class ShoppingCart {
   //Variables
   #currency;

@@ -1,3 +1,10 @@
+/*
+ >>> DOM Manipulation Script <<<
+ >>> Created By: Lalo Aguirre
+ >>> Last Modified Date: 06-25-2023
+*/
+
+/*Import Classes*/
 import { ProductCartAPI } from './productCartAPI.js';
 import { ShoppingCart } from './shoppingCart.js';
 
@@ -26,7 +33,8 @@ function buildCartProducts(products) {
     cellQuantity.innerHTML = `<button class="cart__container__minus">
                               <img src='../img/logos/MinusCircle.GIF' width="20px" height="20px" class="cart__container__minus-img">
                               </button>
-                              <input type="number" data-sku="${SKU}" id="qty" class="cart__container_product-quantity" min="0" value="0"><button class="cart__container__plus">
+                              <input type="number" data-sku="${SKU}" id="qty" class="cart__container_product-quantity" min="0" value="0" oninput="this.value = 
+                              !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"><button class="cart__container__plus">
                               <img src='../img/logos/PlusCircle.GIF' width="20px" height="20px" class="cart__container__minus-img">
                               </button>`;
     cellTotal.innerText = `0 ${shoppingCart.getCurrency()}`;
@@ -91,6 +99,7 @@ function bindEvents() {
     cell.addEventListener('click', (evt) => {
       if (evt.target.classList.contains('cart__container__minus')) {
         const updatedMinusQuantity = parseInt(quantity.value) - 1;
+        //Prevents Negative Numbers
         if (updatedMinusQuantity >= 0) {
           quantity.value = updatedMinusQuantity;
           updateQuantity(cell, +quantity.value, index);
@@ -102,7 +111,7 @@ function bindEvents() {
           updateQuantity(cell, +quantity.value, index);
         }
       } else {
-        //No Code Required
+        console.log('No Click Event !');
       }
     });
   });
