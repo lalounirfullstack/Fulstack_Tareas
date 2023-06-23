@@ -1,23 +1,37 @@
+/*
+ >>> Main Shopping Cart Class <<<
+ >>> Created By: Lalo Aguirre
+ >>> Last Modified Date: 06-25-2023
+*/
+
+// Export Class to be used in Index JS
 export class ShoppingCart {
+  //Variables
+  #currency;
   #products;
   #purchasedProducts;
 
-  constructor(products) {
+  constructor(products, currency) {
+    //Currency:Stores currency Symbol from JSON API
+    this.#currency = currency;
+
+    //Products:Stores SKU, Title, Price from from JSON API
     this.#products = products;
+
+    //Stores products purchased by Customer
     this.#purchasedProducts = [];
-    //console.log('Shopping Cart Products:', this.#products);
   }
 
-  // addPurchasdedProducts(sku) {
-
-  // }
+  getCurrency() {
+    return this.#currency; //Currency Symbol
+  }
 
   getProducts() {
-    return this.#products;
+    return this.#products; //Arrays of Objects Prod
   }
 
   getCart() {
-    let total = 0;
+    let total = 0; //Accumulates Total
 
     const products = this.#purchasedProducts.map((product) => {
       const subtotal = this.calculateProdPrice(product.quantity, product.price);
@@ -25,6 +39,8 @@ export class ShoppingCart {
       total += subtotal;
 
       return {
+        // Shallow Copy of Product to preserve original Prod
+        //and add Subtotal.. Original Product No Subtotal
         ...product,
         subtotal,
       };
@@ -37,17 +53,26 @@ export class ShoppingCart {
   }
 
   addPurchasedProducts(product, quantity) {
-    const found = this.#purchasedProducts.find(
+    const productIndex = this.#purchasedProducts.findIndex(
       ({ SKU }) => SKU === product.SKU
     );
 
-    if (found) {
-      found.quantity = quantity;
+    if (productIndex !== -1) {
+      if (quantity === 0) {
+        this.#purchasedProducts.splice(productIndex, 1);
+      } else {
+        this.#purchasedProducts[productIndex].quantity = quantity;
+      }
     } else {
+      //Converts object to String and String back to Object
       const productCopy = JSON.parse(JSON.stringify(product));
       productCopy.quantity = quantity;
       this.#purchasedProducts.push(productCopy);
     }
+  }
+
+  removeAllProducts() {
+    this.#purchasedProducts = [];
   }
 
   getCartSize() {
@@ -60,10 +85,16 @@ export class ShoppingCart {
     return skus;
   }
 
+  //Returns Products
   getAllProducts(ďata) {
     let products = [];
     data.products.forEach((product) => products.push(product.title));
     return products;
+  }
+
+  getShoppingCartInfo() {
+    const ret = {};
+    console.log('Get Shopping Cart:', this.#purchasedProducts.title);
   }
 
   getProduct(sku) {
@@ -84,43 +115,7 @@ export class ShoppingCart {
     }
   }
 
-  //TO DO
-
   calculateProdPrice(quantity, price) {
     return price * quantity;
   }
-
-  // getcartProductInfo(sku) {
-  //   const prod = {};
-  //   prod.name = this.#products.product.title;
-  //   prod.sku = this.#products.product.SKU;
-  //   prod.quantity = 5;
-  //   return product;
-  // }
-
-  //getCart()
-
-  // getCartPurchasedProducts() {
-  //   return this.#purchasedProducts.length;
-  // }
-
-  // calculateShoppingCartTotal() {
-  //   return this.#purchasedProducts.reduce((acc, product) => {
-  //     return acc + product.getPrice();
-  //   }, 0);
-  // }
 }
-
-// const productCartAPIResponse = new ProductCartAPI(
-//   'https://jsonblob.com/api/jsonBlob/1108553464899977216'
-// );
-
-// productCartAPIResponse.fetchData().then((data) => {
-//   const shoppingCart = new ShoppingCart(data.products);
-//   //console.log(shoppingCart.displayProductsInfo());
-//   console.log(shoppingCart.getProduct('0K3QOSOV4V'));
-//   console.log(shoppingCart.getProductSKU('Funda de piel'));
-//   console.log(shoppingCart.getCartSize());
-//   console.log(shoppingCart.getAllProductSKUs(data));
-//   console.log(shoppingCart.getAllProducts(data));
-// });

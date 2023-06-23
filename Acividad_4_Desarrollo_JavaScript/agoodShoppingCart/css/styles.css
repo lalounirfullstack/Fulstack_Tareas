@@ -1,7 +1,7 @@
 /*
  >>> Specific Site Elements Stylying <<<
  >>> Created By: Lalo Aguirre
- >>> Last Modified Date: 05-20-2023
+ >>> Last Modified Date: 06-25-2023
 */
 
 /*Header Section Stylying*/
@@ -52,11 +52,11 @@ button img {
 }
 
 .cart__container {
-  /*width: 100%;*/
   height: 500px;
-  background-color: red;
+  background-color: var(--dark-gray-bg-background);
   display: flex;
   margin: var(--default-margin);
+  border-radius: var(--round-border-radius);
 }
 
 .cart__container-products {
@@ -64,28 +64,36 @@ button img {
   height: 95%;
   margin: 10px;
   margin-left: 10px;
-  background-color: white;
+  background-color: var(--white-bg-background);
+  border: 1px dotted var(--med-dark-gray-bg-background);
+  border-radius: var(--round-border-radius);
 }
 
-.cart__container-product-table {
+table {
   width: 100%;
-  border-bottom: solid 1px black;
-  background: white;
+  border-radius: var(--round-border-radius);
 }
 
-.cart__container-products-header {
-  display: flex;
-  width: 100%;
-  height: 10%;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: blueviolet;
+th {
+  background-color: var(--med-dark-gray-bg-background);
+}
+
+th,
+td {
+  border: 2px solid var(--med-dark-gray-bg-background);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.cart__container-qty {
+  padding-left: 30px;
 }
 
 .cart__container_product-quantity {
   width: 40px;
   height: 20px;
   margin: 0 10px;
+  text-align: center;
   padding: 0;
 }
 
@@ -95,10 +103,57 @@ button img {
   padding: 5px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cart__container__minus,
+.cart__container__plus {
+  margin: 0;
+  padding: 5px;
+  mix-blend-mode: multiply;
+}
+
+.cart__container__minus-img,
+.cart__container__minus-img {
+  mix-blend-mode: multiply;
+}
+
 .cart__container-cart-total-header {
   font-size: 22px;
   text-align: center;
   border-bottom: 1px black solid;
+}
+
+.cart__container-prod-totals {
+  display: flex;
+  gap: 20px;
+  justify-content: space-evenly;
+  align-items: left;
+  background-color: var(--white-bg-background);
+}
+
+.cart__container-products-cart {
+  display: flex;
+  padding-top: 20px;
+  width: 100%;
+  height: 10%;
+  justify-content: start;
+}
+
+.class__container_products_qty-delete {
+  display: block;
+  width: 3%;
+  margin: auto;
+}
+
+.cart__container-cart-total-header {
+  font-size: 22px;
+  text-align: center;
+  border-bottom: 1px black solid;
+  background-color: var(--med-dark-gray-bg-background);
 }
 
 .cart__container-products-cart {
@@ -108,7 +163,7 @@ button img {
   height: 10%;
   justify-content: space-evenly;
   align-items: left;
-  background-color: white;
+  background-color: var(--white-bg-background);
 }
 
 .cart__container-cart-totals-div {
@@ -116,26 +171,20 @@ button img {
   height: 95%;
   margin: 10px;
   margin-left: 20px;
-  background-color: Grey;
-}
-
-.cart__container-cart-total-items {
-  display: flex;
-  height: 10%;
-  background-color: green;
-  justify-content: space-around;
-  align-items: left;
-  gap: 10px;
-  border-bottom: 2px black solid;
+  background-color: var(--dark-gray-bg-background);
+  border: 1px dotted var(--dark-gray-bg-background);
+  border-radius: var(--round-border-radius);
 }
 
 .cart__container-cart-total-sum {
   display: flex;
+  padding: 10px;
   justify-content: space-around;
   height: 10%;
-  background-color: lightblue;
+  background-color: var(--med-dark-gray-bg-background);
   align-items: left;
   gap: 10px;
+  font-weight: bold;
 }
 
 /*Footer Section Styling*/

@@ -1,81 +1,25 @@
+/*
+ >>> DOM Manipulation Script <<<
+ >>> Created By: Lalo Aguirre
+ >>> Last Modified Date: 06-25-2023
+*/
+
+/*Import Classes*/
 import { ProductCartAPI } from './productCartAPI.js';
 import { ShoppingCart } from './shoppingCart.js';
 
-//HTML Build Functions
-function createDiv(parent, classes) {
-  const div = document.createElement('div');
-  if (classes) {
-    div.classList.add(classes);
-  }
-  parent.appendChild(div);
-  return div;
-}
-
-function createP(parent, classes, content) {
-  const p = document.createElement('p');
-  if (classes) {
-    p.classList.add(classes);
-  }
-  p.textContent = content;
-  parent.appendChild(p);
-}
-
-function createImg(parent, src, classes, width, height, alt) {
-  const img = document.createElement('img');
-  img.style.width = width;
-  img.style.height = height;
-  img.src = src;
-  if (classes) {
-    img.classList.add(classes);
-  }
-  img.alt = alt;
-  parent.appendChild(img);
-  return img;
-}
-
-function getImgInfo(product) {
-  let imgSrc = '';
-  let imgAlt = '';
-  //console.log(`Prod Image ${prod_img}`);
-  if (product.SKU === '0K3QOSOV4V') {
-    imgSrc = '../img/fotos/iPhone13_Pro.jpg';
-    imgAlt = 'iPhone13 Pro';
-  } else if (product.SKU === 'TGD5XORY1L') {
-    imgSrc = '../img/fotos/usb_charger.jpg';
-  } else if (product.SKU === 'IOKW9BQ9F3') {
-    imgSrc = '../img/fotos/leather_case.jpg';
-  } else {
-    imgSrc = '../img/fotos/NoImage.jpg';
-  }
-
-  return { src: imgSrc, alt: imgAlt };
-}
-
-function createInput(parent, classes, type) {
-  const input = document.createElement('input');
-  if (classes) {
-    input.classList.add(classes);
-  }
-  input.type = type;
-  parent.appendChild(input);
-}
-
 function buildCartProducts(products) {
-  const cartContainerProducts = document.querySelector(
-    '.cart__container-products'
-  );
-  console.log(cartContainerProducts);
-
   const table = document.querySelector(
     '.cart__container-products__table tbody'
   );
 
-  //Loops through Products and display Products from API
+  //Loops through Products and display Products from JSON API
+  console.log(products);
   products.forEach(({ SKU, title, price }) => {
     //TRs for API Products
     const row = document.createElement('tr');
 
-    // Cells
+    // Table Cells
     const cellImage = document.createElement('td');
     cellImage.classList.add('cart__container-product-img');
     const cellProduct = document.createElement('td');
@@ -84,18 +28,16 @@ function buildCartProducts(products) {
     cellQuantity.classList.add('cart__container-qty');
     const cellTotal = document.createElement('td');
 
-    cellPrice.innerText = `${price}`;
-    cellProduct.innerText = `${title} - ${SKU}`;
+    cellPrice.innerText = `${price}${shoppingCart.getCurrency()}`;
+    cellProduct.innerText = `${title} - Ref: ${SKU}`;
     cellQuantity.innerHTML = `<button class="cart__container__minus">
-                              <img src='../img/logos/MinusCircle.GIF' width="20px" height="20px">
+                              <img src='../img/logos/MinusCircle.GIF' width="20px" height="20px" class="cart__container__minus-img">
                               </button>
                               <input type="number" data-sku="${SKU}" id="qty" class="cart__container_product-quantity" min="0" value="0">
                               <button class="cart__container__plus">
-                              <img src='../img/logos/PlusCircle.GIF' width="20px" height="20px">
+                              <img src='../img/logos/PlusCircle.GIF' width="20px" height="20px" class="cart__container__minus-img">
                               </button>`;
-    //Append Elements
-    //row.appendChild(cellImage);
-    //const prodImage = document.querySelector('.cart__container-product-img');
+    cellTotal.innerText = `0 ${shoppingCart.getCurrency()}`;
 
     row.appendChild(cellProduct);
     row.appendChild(cellQuantity);
@@ -114,9 +56,9 @@ const updateQuantity = (cell, quantity, productIndex) => {
 
   shoppingCart.addPurchasedProducts(product, quantity);
 
-  totalCell.innerHTML = shoppingCart
-    .calculateProdPrice(quantity, product.price)
-    .toFixed(2);
+  totalCell.innerHTML =
+    shoppingCart.calculateProdPrice(quantity, product.price).toFixed(2) +
+    shoppingCart.getCurrency();
 
   updateTotals();
 };
@@ -129,18 +71,18 @@ const updateTotals = () => {
 
   products.forEach((product) => {
     const row = document.createElement('div');
-    row.classList.add('flex');
+    row.classList.add('cart__container-prod-totals');
 
     row.innerHTML = `
       <div>${product.title}</div>
-      <div>${product.subtotal.toFixed(2)}</div>
+      <div>${product.subtotal.toFixed(2)}${shoppingCart.getCurrency()}</div>
     `;
 
     container.appendChild(row);
   });
 
   document.querySelector('.cart__container-cart-total-sum p + p').innerHTML =
-    total.toFixed(2);
+    total.toFixed(2) + shoppingCart.getCurrency();
 };
 
 function bindEvents() {
@@ -150,36 +92,48 @@ function bindEvents() {
   quantityCells.forEach((cell, index) => {
     let quantity = cell.querySelector('.cart__container_product-quantity');
 
-    quantity.addEventListener('input', () =>
-      updateQuantity(cell, quantity.value, index)
-    );
+    quantity.addEventListener('input', () => {
+      updateQuantity(cell, +quantity.value, index);
+    });
 
     cell.addEventListener('click', (evt) => {
       if (evt.target.classList.contains('cart__container__minus')) {
-        console.log('Minus Event');
         const updatedMinusQuantity = parseInt(quantity.value) - 1;
-        quantity.value = updatedMinusQuantity;
-        updateQuantity(cell, quantity.value, index);
+        //Prevents Negative Numbers
+        if (updatedMinusQuantity >= 0) {
+          quantity.value = updatedMinusQuantity;
+          updateQuantity(cell, +quantity.value, index);
+        }
       } else if (evt.target.classList.contains('cart__container__plus')) {
         const updatedPlusQuantity = parseInt(quantity.value) + 1;
-        quantity.value = updatedPlusQuantity;
-        console.log('Plus Event');
-        updateQuantity(cell, quantity.value, index);
+        if (updatedPlusQuantity < 10) {
+          quantity.value = updatedPlusQuantity;
+          updateQuantity(cell, +quantity.value, index);
+        }
       } else {
-        // ...
+        //if (evt.target.classList.contains('class__container_products_qty-delete')){
+        //   console.log('Click on Delete Button');
+        //   const updatedQuantity=parseInt(quantity.value=0);
+        //   quantity.value = updatedQuantity;
       }
     });
   });
 }
 
-//Update Product Total
-//docu
-
-// updateQuantity();
+const removeQty = document.querySelector('#qty-delete');
+console.log('QTY Image', removeQty);
+removeQty.addEventListener('click', () => {
+  document
+    .querySelectorAll('.cart__container_product-quantity')
+    .forEach((input) => (input.value = '0'));
+  shoppingCart.removeAllProducts();
+  updateTotals();
+});
 
 let shoppingCart;
 
 document.addEventListener('DOMContentLoaded', () => {
+  //Gets Products from JSON API
   const productCartAPIResponse = new ProductCartAPI(
     'https://jsonblob.com/api/jsonBlob/1108553464899977216'
   );
@@ -187,14 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
   productCartAPIResponse
     .fetchData()
     .then((data) => {
-      shoppingCart = new ShoppingCart(data.products);
-      console.log(shoppingCart.getProduct('0K3QOSOV4V'));
-      console.log(shoppingCart.getProductSKU('Funda de piel'));
-      console.log(shoppingCart.getCartSize());
-      console.log(shoppingCart.getAllProductSKUs(data));
-      //console.log(shoppingCart.getAllProducts(data));
-      console.log(shoppingCart.calculateProdPrice(10, 100));
-      // //console.log(shoppingCart.getcartProductInfo('0K3QOSOV4V'));
+      //New Instance of Shopping Cart
+      shoppingCart = new ShoppingCart(data.products, data.currency);
+      //Calls build Cart Method and passes Products
       buildCartProducts(data.products);
     })
     .catch((error) => {
