@@ -48,3 +48,6 @@ getShoppingCart()
 + API to get products
 + Proper Page to display Shopping Cart
 
+// Notes: 
+Product Class not required.. as per Instructions I built a Shopping Cart only.
+
