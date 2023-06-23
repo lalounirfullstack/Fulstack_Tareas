@@ -78,7 +78,7 @@ export class ShoppingCart {
     return skus;
   }
 
-  //???
+  //Returns Products
   getAllProducts(ďata) {
     let products = [];
     data.products.forEach((product) => products.push(product.title));
