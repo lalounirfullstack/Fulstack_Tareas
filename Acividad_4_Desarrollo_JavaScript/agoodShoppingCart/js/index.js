@@ -26,8 +26,7 @@ function buildCartProducts(products) {
     cellQuantity.innerHTML = `<button class="cart__container__minus">
                               <img src='../img/logos/MinusCircle.GIF' width="20px" height="20px" class="cart__container__minus-img">
                               </button>
-                              <input type="number" data-sku="${SKU}" id="qty" class="cart__container_product-quantity" min="0" value="0">
-                              <button class="cart__container__plus">
+                              <input type="number" data-sku="${SKU}" id="qty" class="cart__container_product-quantity" min="0" value="0"><button class="cart__container__plus">
                               <img src='../img/logos/PlusCircle.GIF' width="20px" height="20px" class="cart__container__minus-img">
                               </button>`;
     cellTotal.innerText = `0 ${shoppingCart.getCurrency()}`;
@@ -43,7 +42,6 @@ function buildCartProducts(products) {
   bindEvents();
 }
 
-//???
 const updateQuantity = (cell, quantity, productIndex) => {
   const product = shoppingCart.getProducts()[productIndex];
   const totalCell = cell.parentElement.children[3];
@@ -86,24 +84,25 @@ function bindEvents() {
   quantityCells.forEach((cell, index) => {
     let quantity = cell.querySelector('.cart__container_product-quantity');
 
-    quantity.addEventListener('input', () =>
-      updateQuantity(cell, +quantity.value, index)
-    );
+    quantity.addEventListener('input', () => {
+      updateQuantity(cell, +quantity.value, index);
+    });
 
     cell.addEventListener('click', (evt) => {
       if (evt.target.classList.contains('cart__container__minus')) {
         const updatedMinusQuantity = parseInt(quantity.value) - 1;
-        quantity.value = updatedMinusQuantity;
-        updateQuantity(cell, +quantity.value, index);
+        if (updatedMinusQuantity >= 0) {
+          quantity.value = updatedMinusQuantity;
+          updateQuantity(cell, +quantity.value, index);
+        }
       } else if (evt.target.classList.contains('cart__container__plus')) {
         const updatedPlusQuantity = parseInt(quantity.value) + 1;
-        quantity.value = updatedPlusQuantity;
-        updateQuantity(cell, +quantity.value, index);
+        if (updatedPlusQuantity < 10) {
+          quantity.value = updatedPlusQuantity;
+          updateQuantity(cell, +quantity.value, index);
+        }
       } else {
-        //if (evt.target.classList.contains('class__container_products_qty-delete')){
-        //   console.log('Click on Delete Button');
-        //   const updatedQuantity=parseInt(quantity.value=0);
-        //   quantity.value = updatedQuantity;
+        //No Code Required
       }
     });
   });
@@ -112,10 +111,6 @@ function bindEvents() {
 const removeQty = document.querySelector('#qty-delete');
 console.log('QTY Image', removeQty);
 removeQty.addEventListener('click', () => {
-  console.log('Delete All');
-  // const updatedQuantity=parseInt(quantity.value=0);
-  // quantity.value = updatedQuantity;
-  // // shoppingCart.removeAllProducts();
   document
     .querySelectorAll('.cart__container_product-quantity')
     .forEach((input) => (input.value = '0'));
