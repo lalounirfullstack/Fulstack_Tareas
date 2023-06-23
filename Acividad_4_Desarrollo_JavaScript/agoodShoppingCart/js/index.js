@@ -33,8 +33,8 @@ function buildCartProducts(products) {
     cellQuantity.innerHTML = `<button class="cart__container__minus">
                               <img src='../img/logos/MinusCircle.GIF' width="20px" height="20px" class="cart__container__minus-img">
                               </button>
-                              <input type="number" data-sku="${SKU}" id="qty" class="cart__container_product-quantity" min="0" value="0" oninput="this.value = 
-                              !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"><button class="cart__container__plus">
+                              <input type="number" data-sku="${SKU}" id="qty" class="cart__container_product-quantity" min="0" value="0">
+                              <button class="cart__container__plus">
                               <img src='../img/logos/PlusCircle.GIF' width="20px" height="20px" class="cart__container__minus-img">
                               </button>`;
     cellTotal.innerText = `0 ${shoppingCart.getCurrency()}`;
@@ -111,7 +111,10 @@ function bindEvents() {
           updateQuantity(cell, +quantity.value, index);
         }
       } else {
-        console.log('No Click Event !');
+        //if (evt.target.classList.contains('class__container_products_qty-delete')){
+        //   console.log('Click on Delete Button');
+        //   const updatedQuantity=parseInt(quantity.value=0);
+        //   quantity.value = updatedQuantity;
       }
     });
   });
