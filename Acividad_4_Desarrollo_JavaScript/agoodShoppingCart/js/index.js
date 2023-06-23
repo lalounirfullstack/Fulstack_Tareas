@@ -134,8 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
   productCartAPIResponse
     .fetchData()
     .then((data) => {
+      //New Instance of Shopping Cart
       shoppingCart = new ShoppingCart(data.products, data.currency);
-      shoppingCart.getShoppingCartInfo();
+      //Calls build Cart Method and passes Products
       buildCartProducts(data.products);
     })
     .catch((error) => {
