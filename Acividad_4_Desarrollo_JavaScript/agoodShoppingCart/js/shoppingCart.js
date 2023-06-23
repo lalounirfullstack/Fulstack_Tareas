@@ -1,24 +1,30 @@
 export class ShoppingCart {
+  //Variables
   #currency;
   #products;
   #purchasedProducts;
 
   constructor(products, currency) {
+    //Currency:Stores currency Symbol from JSON API
     this.#currency = currency;
+
+    //Products:Stores SKU, Title, Price from from JSON API
     this.#products = products;
+
+    //Stores products purchased by Customer
     this.#purchasedProducts = [];
   }
 
   getCurrency() {
-    return this.#currency;
+    return this.#currency; //Currency Symbol
   }
 
   getProducts() {
-    return this.#products;
+    return this.#products; //Arrays of Objects Prod
   }
 
   getCart() {
-    let total = 0;
+    let total = 0; //Accumulates Total
 
     const products = this.#purchasedProducts.map((product) => {
       const subtotal = this.calculateProdPrice(product.quantity, product.price);
@@ -26,6 +32,8 @@ export class ShoppingCart {
       total += subtotal;
 
       return {
+        // Shallow Copy of Product to preserve original Prod
+        //and add Subtotal.. Original Product No Subtotal
         ...product,
         subtotal,
       };
@@ -49,10 +57,15 @@ export class ShoppingCart {
         this.#purchasedProducts[productIndex].quantity = quantity;
       }
     } else {
+      //Converts object to String and String back to Object
       const productCopy = JSON.parse(JSON.stringify(product));
       productCopy.quantity = quantity;
       this.#purchasedProducts.push(productCopy);
     }
+  }
+
+  removeAllProducts() {
+    this.#purchasedProducts = [];
   }
 
   getCartSize() {
@@ -65,10 +78,16 @@ export class ShoppingCart {
     return skus;
   }
 
+  //???
   getAllProducts(ďata) {
     let products = [];
     data.products.forEach((product) => products.push(product.title));
     return products;
+  }
+
+  getShoppingCartInfo() {
+    const ret = {};
+    console.log('Get Shopping Cart:', this.#purchasedProducts.title);
   }
 
   getProduct(sku) {
@@ -93,17 +112,3 @@ export class ShoppingCart {
     return price * quantity;
   }
 }
-
-// const productCartAPIResponse = new ProductCartAPI(
-//   'https://jsonblob.com/api/jsonBlob/1108553464899977216'
-// );
-
-// productCartAPIResponse.fetchData().then((data) => {
-//   const shoppingCart = new ShoppingCart(data.products);
-//   //console.log(shoppingCart.displayProductsInfo());
-//   console.log(shoppingCart.getProduct('0K3QOSOV4V'));
-//   console.log(shoppingCart.getProductSKU('Funda de piel'));
-//   console.log(shoppingCart.getCartSize());
-//   console.log(shoppingCart.getAllProductSKUs(data));
-//   console.log(shoppingCart.getAllProducts(data));
-// });

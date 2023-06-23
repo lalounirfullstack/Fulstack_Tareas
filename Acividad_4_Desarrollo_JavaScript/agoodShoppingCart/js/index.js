@@ -1,81 +1,18 @@
 import { ProductCartAPI } from './productCartAPI.js';
 import { ShoppingCart } from './shoppingCart.js';
 
-//HTML Build Functions
-function createDiv(parent, classes) {
-  const div = document.createElement('div');
-  if (classes) {
-    div.classList.add(classes);
-  }
-  parent.appendChild(div);
-  return div;
-}
-
-function createP(parent, classes, content) {
-  const p = document.createElement('p');
-  if (classes) {
-    p.classList.add(classes);
-  }
-  p.textContent = content;
-  parent.appendChild(p);
-}
-
-function createImg(parent, src, classes, width, height, alt) {
-  const img = document.createElement('img');
-  img.style.width = width;
-  img.style.height = height;
-  img.src = src;
-  if (classes) {
-    img.classList.add(classes);
-  }
-  img.alt = alt;
-  parent.appendChild(img);
-  return img;
-}
-
-function getImgInfo(product) {
-  let imgSrc = '';
-  let imgAlt = '';
-  //console.log(`Prod Image ${prod_img}`);
-  if (product.SKU === '0K3QOSOV4V') {
-    imgSrc = '../img/fotos/iPhone13_Pro.jpg';
-    imgAlt = 'iPhone13 Pro';
-  } else if (product.SKU === 'TGD5XORY1L') {
-    imgSrc = '../img/fotos/usb_charger.jpg';
-  } else if (product.SKU === 'IOKW9BQ9F3') {
-    imgSrc = '../img/fotos/leather_case.jpg';
-  } else {
-    imgSrc = '../img/fotos/NoImage.jpg';
-  }
-
-  return { src: imgSrc, alt: imgAlt };
-}
-
-function createInput(parent, classes, type) {
-  const input = document.createElement('input');
-  if (classes) {
-    input.classList.add(classes);
-  }
-  input.type = type;
-  parent.appendChild(input);
-}
-
 function buildCartProducts(products) {
-  const cartContainerProducts = document.querySelector(
-    '.cart__container-products'
-  );
-
   const table = document.querySelector(
     '.cart__container-products__table tbody'
   );
 
-  //Loops through Products and display Products from API
+  //Loops through Products and display Products from JSON API
   console.log(products);
   products.forEach(({ SKU, title, price }) => {
     //TRs for API Products
     const row = document.createElement('tr');
 
-    // Cells
+    // Table Cells
     const cellImage = document.createElement('td');
     cellImage.classList.add('cart__container-product-img');
     const cellProduct = document.createElement('td');
@@ -106,6 +43,7 @@ function buildCartProducts(products) {
   bindEvents();
 }
 
+//???
 const updateQuantity = (cell, quantity, productIndex) => {
   const product = shoppingCart.getProducts()[productIndex];
   const totalCell = cell.parentElement.children[3];
@@ -162,15 +100,33 @@ function bindEvents() {
         quantity.value = updatedPlusQuantity;
         updateQuantity(cell, +quantity.value, index);
       } else {
-        // ...
+        //if (evt.target.classList.contains('class__container_products_qty-delete')){
+        //   console.log('Click on Delete Button');
+        //   const updatedQuantity=parseInt(quantity.value=0);
+        //   quantity.value = updatedQuantity;
       }
     });
   });
 }
 
+const removeQty = document.querySelector('#qty-delete');
+console.log('QTY Image', removeQty);
+removeQty.addEventListener('click', () => {
+  console.log('Delete All');
+  // const updatedQuantity=parseInt(quantity.value=0);
+  // quantity.value = updatedQuantity;
+  // // shoppingCart.removeAllProducts();
+  document
+    .querySelectorAll('.cart__container_product-quantity')
+    .forEach((input) => (input.value = '0'));
+  shoppingCart.removeAllProducts();
+  updateTotals();
+});
+
 let shoppingCart;
 
 document.addEventListener('DOMContentLoaded', () => {
+  //Gets Products from JSON API
   const productCartAPIResponse = new ProductCartAPI(
     'https://jsonblob.com/api/jsonBlob/1108553464899977216'
   );
@@ -179,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .fetchData()
     .then((data) => {
       shoppingCart = new ShoppingCart(data.products, data.currency);
+      shoppingCart.getShoppingCartInfo();
       buildCartProducts(data.products);
     })
     .catch((error) => {
