@@ -98,6 +98,7 @@ function bindEvents() {
         updateQuantity(cell, +quantity.value, index);
       } else {
         alert('Cantidad Invalida o solo puedes comprar hasta 100 unidades');
+        quantity.value = 0;
       }
     });
 
@@ -108,8 +109,6 @@ function bindEvents() {
         if (updatedMinusQuantity >= 0) {
           quantity.value = updatedMinusQuantity;
           updateQuantity(cell, +quantity.value, index);
-        } else {
-          alert('Cantidad Invalida o solo puedes comprar hasta 100 unidades');
         }
       } else if (evt.target.classList.contains('cart__container__plus')) {
         const updatedPlusQuantity = parseInt(quantity.value) + 1;
@@ -119,6 +118,7 @@ function bindEvents() {
           updateQuantity(cell, +quantity.value, index);
         } else {
           alert('Cantidad Invalida o solo puedes comprar hasta 100 unidades');
+          quantity.value = 0;
         }
       } else {
         console.log('No Click action');
