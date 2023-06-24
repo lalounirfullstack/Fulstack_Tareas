@@ -93,7 +93,12 @@ function bindEvents() {
     let quantity = cell.querySelector('.cart__container_product-quantity');
 
     quantity.addEventListener('input', () => {
-      updateQuantity(cell, +quantity.value, index);
+      //Limit to protect Resellerslue
+      if (quantity.value >= 0 && quantity.value <= 50) {
+        updateQuantity(cell, +quantity.value, index);
+      } else {
+        alert('Cantidad Invalida o solo puedes comprar hasta 50 unidades');
+      }
     });
 
     cell.addEventListener('click', (evt) => {
@@ -103,18 +108,20 @@ function bindEvents() {
         if (updatedMinusQuantity >= 0) {
           quantity.value = updatedMinusQuantity;
           updateQuantity(cell, +quantity.value, index);
+        } else {
+          alert('Cantidad Invalida o solo puedes comprar hasta 50 unidades');
         }
       } else if (evt.target.classList.contains('cart__container__plus')) {
         const updatedPlusQuantity = parseInt(quantity.value) + 1;
-        if (updatedPlusQuantity < 10) {
+        //Limit to protect Resellers
+        if (updatedPlusQuantity <= 50) {
           quantity.value = updatedPlusQuantity;
           updateQuantity(cell, +quantity.value, index);
+        } else {
+          alert('Cantidad Invalida o solo puedes comprar hasta 50 unidades');
         }
       } else {
-        //if (evt.target.classList.contains('class__container_products_qty-delete')){
-        //   console.log('Click on Delete Button');
-        //   const updatedQuantity=parseInt(quantity.value=0);
-        //   quantity.value = updatedQuantity;
+        console.log('No Click action');
       }
     });
   });
