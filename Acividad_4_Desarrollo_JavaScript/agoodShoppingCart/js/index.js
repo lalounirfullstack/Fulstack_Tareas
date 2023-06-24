@@ -97,7 +97,7 @@ function bindEvents() {
       if (quantity.value >= 0 && quantity.value <= 100) {
         updateQuantity(cell, +quantity.value, index);
       } else {
-        alert('Cantidad Invalida o solo puedes comprar hasta 50 unidades');
+        alert('Cantidad Invalida o solo puedes comprar hasta 100 unidades');
       }
     });
 
