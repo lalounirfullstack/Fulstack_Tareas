@@ -106,15 +106,13 @@ function bindEvents() {
         }
       } else if (evt.target.classList.contains('cart__container__plus')) {
         const updatedPlusQuantity = parseInt(quantity.value) + 1;
-        if (updatedPlusQuantity < 10) {
+        //Limit to protect Resellers
+        if (updatedPlusQuantity < 50) {
           quantity.value = updatedPlusQuantity;
           updateQuantity(cell, +quantity.value, index);
         }
       } else {
-        //if (evt.target.classList.contains('class__container_products_qty-delete')){
-        //   console.log('Click on Delete Button');
-        //   const updatedQuantity=parseInt(quantity.value=0);
-        //   quantity.value = updatedQuantity;
+        console.log('No Click action');
       }
     });
   });
