@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./blog-header.component.css'],
 })
 export class BlogHeaderComponent {
-  
+  //Used to display current Date
   today = new Date();
   formattedDate = this.formatDate(this.today);
 
