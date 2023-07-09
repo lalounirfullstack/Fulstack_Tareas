@@ -1,23 +1,24 @@
 <header>
-  <!--Insert Header Component-->
+  <!--Dinamycally Insert Header Component-->
   <app-blog-header></app-blog-header>
 </header>
 <main>
   <!--News Form-->
   <section class="news-form">
     <div class="form">
-      <!--Insert News-Form Component-->
+      <!--Dynamycally Insert News-Form Component-->
       <app-blog-form (blogEntryEmitido)="getBlogEntry($event)"></app-blog-form>
     </div>
   </section>
   <!--News Blog-->
   <section class="news-blogs">
     <div class="news-blog">
+      <!--Dynamycally Insert News Component-->
       <app-blog-news [blogNews]="blogNews"></app-blog-news>
     </div>
   </section>
 </main>
 <footer>
-  <!--Insert Footer Component-->
+  <!--Dynamycally Insert Footer Component-->
   <app-blog-footer></app-blog-footer>
 </footer>

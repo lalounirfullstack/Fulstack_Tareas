@@ -12,6 +12,7 @@ export class BlogNewsComponent {
   loadBlogNews() {
     let html = '';
     console.log(this.blogNews);
+    //Loops through Blog News arrays and builds HTML
     this.blogNews.forEach((blogEntry) => {
       html += `<article class="blog-entry">
                 <div class="card-image">
@@ -26,9 +27,10 @@ export class BlogNewsComponent {
                 </div>
                 <div class="content">
                   <p>${blogEntry.news}</p>
-                </div>  
                 </div>
-                
+                <div>
+                  <p>More...</p>
+                </div>
               </article>`;
     });
     return html;

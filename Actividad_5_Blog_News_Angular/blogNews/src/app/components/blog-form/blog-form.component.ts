@@ -7,6 +7,7 @@ import { Blog } from 'src/app/interfaces/blog.interface';
   styleUrls: ['./blog-form.component.css'],
 })
 export class BlogFormComponent {
+  //Send Information from Child to Parent
   @Output() blogEntryEmitido: EventEmitter<Blog>;
   newBlogEntry: Blog = { title: '', image: '', news: '', date: '' };
 
@@ -15,8 +16,9 @@ export class BlogFormComponent {
   }
 
   getDataForm() {
+    //Send information from the Blog Form to the Parent
     this.blogEntryEmitido.emit(this.newBlogEntry);
-    //Clear Values
+    //Clear Form Values
     this.newBlogEntry = { title: '', image: '', news: '', date: '' };
   }
 }
