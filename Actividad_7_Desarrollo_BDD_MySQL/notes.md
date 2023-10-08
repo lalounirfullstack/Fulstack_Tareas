@@ -16,7 +16,9 @@
   + nombre
   + telefono
   + email
-  + referencia si tiene mesa ocupada
+  + referencia si tiene mesa ocupada.
++ Clientes_Mesas
+  + Relacion entre Clientes y Mesas
 + Favoritos
   + Relacion entre Cliente y Locales 
   + Favoritos de un cliente en concreto
@@ -36,3 +38,17 @@
 + Definición correcta de todos los campos de la tabla favoritos.
 + Creación y funcionamiento correcto de las sentencias SQL que nos permiten recuperar información a partir
 de las diferentes relaciones.
+
+## Notas
++ Locales (Tabla)
+  + Adicione el campo sucursal para permitir el uso de un Restaurant que es como una Franquicia con varias sucursales.
+  + Esto permite saber hacer reservaciones y conocer las fechas de ocupacion de mesas por cada sucursal.
+  + Ademas permite conocer mas a detalle no solo el restaurant favorito del cliente sino que sucursal.
++ Clientes & Mesas
+  + Creee esta tabla para permitir que un Cliente pueda ocupar varias mesas es diferentes restaurantes.
+  + No hay reglas de validacion como que no pueda reservar una misma mesa al mismo tiempo en dos locales 
+    pero la idea se podria implementar.
++ Inclui un stored Procedure para agilizar el Testing
++ Inclui una View para agilizar otras busquedas.
++ Include BD BackUp ademas de los archivos SQL. 
+
