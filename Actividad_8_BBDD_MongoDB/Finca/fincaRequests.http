@@ -1,0 +1,104 @@
+####
+GET http://localhost:3239/pruebas
+
+###
+POST http://localhost:3239/api/inmuebles
+Content-Type: application/json
+
+{
+    "piso":"22",
+    "letra":"E",
+    "extension": 29,
+    "habitaciones":4,
+    "alquilado": false,
+    "propietario": "Johanes Lopez",
+    "mailPropietario": "johLopez@gmail.com"
+}
+
+###
+POST http://localhost:3239/api/inmuebles
+Content-Type: application/json
+
+{
+    "piso":"22",
+    "letra":"E",
+    "extension": 29,
+    "habitaciones":4,
+    "alquilado": false,
+    "propietario": "Johanes Lopez",
+    "mailPropietario": "johLopez@gmail.com"
+}
+
+###
+POST http://localhost:3239/api/inmuebles
+Content-Type: application/json
+
+{
+    "piso":"22",
+    "letra":"E",
+    "extension": 29,
+    "habitaciones":4,
+    "alquilado": false,
+    "propietario": "Johanes Lopez",
+    "mailPropietario": "johLopez@gmail.com"
+}
+
+###
+POST http://localhost:3239/api/inmuebles
+Content-Type: application/json
+
+{
+    "piso":"22",
+    "letra":"E",
+    "extension": 29,
+    "habitaciones":4,
+    "alquilado": false,
+    "propietario": "Johanes Lopez",
+    "mailPropietario": "johLopez@gmail.com"
+}
+
+### GET ALL
+GET http://localhost:3239/api/inmuebles
+
+### GET BY ID
+GET http://localhost:3239/api/inmuebles/6526fdc6d5eedcb1c45a58c5
+
+###
+GET http://localhost:3239/api/inmuebles/65288d3bb8eb0a52431cbe05
+
+###
+GET http://localhost:3239/api/inmuebles/65288f77ac2b63411a1a137c
+
+### UPDATE
+PUT http://localhost:3239/api/inmuebles/65288f77ac2b63411a1a137c
+Content-Type: application/json
+
+{
+    "piso":"2",
+    "letra":"Z",
+    "extension": 91,
+    "habitaciones":2,
+    "alquilado": true,
+    "propietario": "Nicolas Carson",
+    "mailPropietario": "ncarson@gmail.com"
+}
+
+### POST DUPLICATE
+POST http://localhost:3239/api/inmuebles
+Content-Type: application/json
+
+{
+    "piso":"14",
+    "letra":"D",
+    "extension": 50,
+    "habitaciones":3,
+    "alquilado": true,
+    "propietario": "Ronald McDonalds - Duplicate ***",
+    "mailPropietario": "rmc@gmail.com"
+}
+
+### Delete
+DELETE http://localhost:3239/api/inmuebles/6528985a19f3c1b2c4799177
+
+###
+DELETE http://localhost:3239/api/inmuebles/6528986995b9cf7736684757
