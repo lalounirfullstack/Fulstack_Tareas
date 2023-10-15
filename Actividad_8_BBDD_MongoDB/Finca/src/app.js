@@ -4,11 +4,6 @@ const app = express();
 
 app.use(express.json());
 
-// app.get('/pruebas', (req,res)=>{
-//     //Responder
-//     res.send('Las Pruebas Funcionan !');
-// })
-
 app.use('/api/inmuebles', require('./routes/inmuebles'))
 
 module.exports = app;
