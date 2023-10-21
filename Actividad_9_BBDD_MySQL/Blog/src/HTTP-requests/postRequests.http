@@ -17,8 +17,8 @@ PUT http://localhost:3000/api/posts/30
 Content-Type: application/json
 
 {
-  "title": "Flutter Engine",
-  "description": "Flutter has fuel ...",
+  "title": "Flutter Engine Power",
+  "description": "Flutter has fuel enough to...",
   "category": "Mobile Development",
   "updated_date": "2023-10-21 03:49:30",
   "authors_id": 4

@@ -12,7 +12,7 @@ const insertPost = ({title, description, category, authors_id})=>{
 }
 
 const updatePostById = (id, {title, description, category, updated_date, authors_id }) => {
-    return db.query('UPDATE posts SET title=?, description=?, category=?, updated_date=?, authors_id=? WHERE id=?',
+    return db.query('UPDATE posts SET title=IFNULL(?,title), description=IFNULL(?,description),category=IFNULL(?,category),updated_date=?, authors_id=IFNULL(?,authors_id)  WHERE id=?',
     [title, description, category,updated_date, authors_id, id])
 }
 
