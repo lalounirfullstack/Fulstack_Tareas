@@ -1025,8 +1025,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </schema>
     <schema id="298" parent="1" name="blogs">
-      <IntrospectionTimestamp>2023-10-19.21:26:37</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-10-20.11:26:37</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-10-21.01:25:51</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-10-21.15:25:51</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </schema>
     <user id="299" parent="1" name="mysql.infoschema">
@@ -1057,7 +1057,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
     <column id="305" parent="303" name="id">
-      <AutoIncrement>2</AutoIncrement>
+      <AutoIncrement>16</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1095,7 +1095,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>email_UNIQUE</UnderlyingIndexName>
     </key>
     <column id="313" parent="304" name="id">
-      <AutoIncrement>3</AutoIncrement>
+      <AutoIncrement>31</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1123,22 +1123,26 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <foreign-key id="319" parent="304" name="fk_posts_authors">
+    <column id="319" parent="304" name="updated_date">
+      <DasType>datetime|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <foreign-key id="320" parent="304" name="fk_posts_authors">
       <ColNames>authors_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>authors</RefTableName>
     </foreign-key>
-    <index id="320" parent="304" name="PRIMARY">
+    <index id="321" parent="304" name="PRIMARY">
       <ColNames>id
 authors_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="321" parent="304" name="fk_posts_authors_idx">
+    <index id="322" parent="304" name="fk_posts_authors_idx">
       <ColNames>authors_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="322" parent="304" name="PRIMARY">
+    <key id="323" parent="304" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

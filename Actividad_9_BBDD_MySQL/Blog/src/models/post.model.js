@@ -11,9 +11,9 @@ const insertPost = ({title, description, category, authors_id})=>{
         'INSERT INTO posts (title, description, category, authors_id) values(?,?,?,?)', [title, description, category, authors_id] )
 }
 
-const updatePostById = (id, {title, description, category,authors_id }) => {
-    return db.query('UPDATE posts SET title=?, description=?, category=?, authors_id=? WHERE id=?',
-    [title, description, category,authors_id, id])
+const updatePostById = (id, {title, description, category, updated_date, authors_id }) => {
+    return db.query('UPDATE posts SET title=?, description=?, category=?, updated_date=?, authors_id=? WHERE id=?',
+    [title, description, category,updated_date, authors_id, id])
 }
 
 const deletePostById = (id) => {
