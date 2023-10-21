@@ -1,0 +1,27 @@
+###
+GET http://localhost:3000/api/posts
+
+###
+POST http://localhost:3000/api/posts
+Content-Type: application/json
+
+{
+  "title": "Flutter Rocket",
+  "description": "Flutter has become the best ...",
+  "category": "Mobile Development",
+  "authors_id": 3
+}
+
+###
+PUT http://localhost:3000/api/posts/30
+Content-Type: application/json
+
+{
+  "title": "Flutter Engine",
+  "description": "Flutter has fuel ...",
+  "category": "Mobile Development",
+  "authors_id": 4
+}
+
+####
+DELETE http://localhost:3000/api/posts/23
