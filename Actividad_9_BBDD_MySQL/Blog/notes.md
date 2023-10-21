@@ -11,6 +11,7 @@
     + Title
     + Description
     + Created_Date
+    + Updated_Date
     + Category
     + AuthorID (Foreign Key - Authors)
   + Autores
@@ -42,3 +43,19 @@
 + daysjs
 + mysql2
 + cors
+
+*************************************************************
+                       Test Scenarios
+*************************************************************
+1. MySQL Schema created from Model - Completed successfully
+2. MySQL Schema created from Script - Completed successfully
+3. Author HTTP requests (CRUD):
+   + Create Author
+   + Read Author (List of Authors)
+   + Update Author
+   + Delete Author
++ Post HTTP requests (CRUD):
+   + Create Posts
+   + Read Post (Posts from a given Actor)
+   + Update Posts
+   + Delete Posts
